@@ -9,8 +9,15 @@ import lombok.ToString;
 @NoArgsConstructor
 @Deprecated
 @ToString
-public class CarDTO {
+public class CarDetailsDTO {
     String regNumber;
     String Brand;
-    String
+    String Type;
+    Double freeMileage;
+    Double priceForExtraKm;
+    String color;
+    int numOfPass;
+    String transmissionType;
+    String fuelType;
+    String status;
 }
