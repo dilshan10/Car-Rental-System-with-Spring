@@ -6,15 +6,38 @@
     <link rel="stylesheet" href="../../asserts/CSS/normalize.css">
     <style>
         body{
-            height: 100vh;
+            height: 98vh;
             width: 100vw;
             background: url("");
+            background-size: cover;
+            position: relative;
+        }
 
+        body>section:nth-child(1)>label:nth-child(1){
+            height: fit-content;
+            width: fit-content;
+            font-size: 5vh;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 2vh;
+            margin: auto;
+        }
+        body>section:nth-child(1)>hr:nth-child(2){
+            position: absolute;
+            width: 75vh;
+            left: 0;
+            right: 0;
+            top: 8vh;
+            margin: auto;
         }
     </style>
 </head>
 <body>
-
+    <section>
+        <label>New Customer Registrations Form </label>
+        <hr>
+    </section>
 </body>
 <script src="../../asserts/js/jquery-3.6.1.min.js"></script>
 <script>
