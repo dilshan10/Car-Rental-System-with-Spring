@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Back-End With Spring/Back-End With Spring.iml" filepath="$PROJECT_DIR$/Back-End With Spring/Back-End With Spring.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Font-End with Ajex/Font-End with Ajex.iml" filepath="$PROJECT_DIR$/Font-End with Ajex/Font-End with Ajex.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Login</title>
+    <link rel="stylesheet" href="../../asserts/CSS/normalize.css">
+    <style>
+        body{
+            background: url("../../asserts/image/Japan-car-rental-iStock-Chaiyaporn1144-1024x600.jpg");
+            background-size: cover;
+            width: 100vw;
+            height: 100vh;
+        }
+        body>section:nth-child(1){
+            position: absolute;
+            margin: auto;
+            height: 100vh;
+            width: 65vh;
+            right: 0;
+        }
+        body>section:nth-child(1)>label:nth-child(1){
+            color: white;
+            position: absolute;
+            height: fit-content;
+            width: fit-content;
+            font-size: 4vh;
+            left: 0;
+            right: 0;
+            margin: auto;
+            top: 31vh;
+        }
+        #lblUserName{
+            position: absolute;
+            height: fit-content;
+            width: fit-content;
+            margin: auto;
+            right: 0;
+            left: 0;
+            top: 37vh;
+            color: white;
+        }
+        #userName{
+            position: absolute;
+            height: fit-content;
+            width: 75%;
+            margin: auto;
+            right: 0;
+            top: 40vh;
+            left: 0;
+        }
+        #lblPassword{
+            position: absolute;
+            height: fit-content;
+            width: fit-content;
+            margin: auto;
+            right: 0;
+            left: 0;
+            top: 45vh;
+            color: white;
+        }
+        #Password{
+            position: absolute;
+            height: fit-content;
+            width: 75%;
+            margin: auto;
+            right: 0;
+            left: 0;
+            top: 48vh;
+        }
+        #btnCustomerLogin{
+            position: absolute;
+            height: fit-content;
+            width: fit-content;
+            right: 0;
+            left: 0;
+            top: 54vh;
+            margin: auto;
+        }
+        #btnCustomerLogin:hover{
+            color: white;
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <label>Customer Login..</label>
+        <form>
+            <label for="userName" id="lblUserName">Customer UserName/email</label><br>
+            <input type="text" name="UserName" id="userName"><br>
+            <label for="Password" id="lblPassword">Password</label><br>
+            <input type="password" id="Password"><br>
+            <button type="button" id="btnCustomerLogin"><i><b>Login..</b></i></button>
+        </form>
+    </section>
+</body>
+<script src="../../asserts/js/jquery-3.6.1.min.js"></script>
+<script>
+    $('#userName').focus()
+
+    $('#userName').keydown(function (event){
+        if (event.key == "Enter"){
+            $('#Password').focus()
+        }
+    })
+
+    $('#Password').keydown(function (event){
+        if (event.key == "Enter"){
+            $('#btnCustomerLogin').focus();
+        }
+    })
+
+    $('#btnCustomerLogin').click(function (){
+        console.log("run")
+        var username = $('#userName').val();
+        var password = $('#Password').val();
+        console.log(username,password);
+        if (username == "root1" && password == "1234"){
+            alert("hello user...")
+        }else {
+            alert("Plz check username and password..!")
+        }
+    })
+
+    let urlPaten = "";
+
+</script>
+</html>

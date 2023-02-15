@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Driver Login</title>
+    <link rel="stylesheet" href="../../asserts/CSS/normalize.css">
+    <style>
+        body{
+            height: 100vh;
+            width: 100vw;
+            position: relative;
+            background: url("../../asserts/image/imageedit_5_2854541689.jpg");
+            background-size: cover;
+        }
+
+        body>section:nth-child(1){
+            position: absolute;
+            margin: auto;
+            height: 100vh;
+            width: 65vh;
+            left: 0;
+        }
+
+        #lblDriver{
+            color: #000000;
+            position: absolute;
+            height: fit-content;
+            width: fit-content;
+            font-size: 4vh;
+            left: 0;
+            right: 0;
+            margin: auto;
+            top: 31vh;
+        }
+
+        #lblUsername{
+            position: absolute;
+            height: fit-content;
+            width: fit-content;
+            margin: auto;
+            right: 0;
+            left: 0;
+            top: 37vh;
+            color: #000000;
+        }
+
+        #username{
+            position: absolute;
+            height: fit-content;
+            width: 75%;
+            margin: auto;
+            right: 0;
+            top: 40vh;
+            left: 0;
+        }
+
+        #lblPassword{
+            position: absolute;
+            height: fit-content;
+            width: fit-content;
+            margin: auto;
+            right: 0;
+            left: 0;
+            top: 45vh;
+            color: #000000;
+        }
+
+        #password{
+            position: absolute;
+            height: fit-content;
+            width: 75%;
+            margin: auto;
+            right: 0;
+            left: 0;
+            top: 48vh;
+        }
+
+        #btnDriverLogin{
+            position: absolute;
+            height: fit-content;
+            width: fit-content;
+            right: 0;
+            left: 0;
+            top: 54vh;
+            margin: auto;
+        }
+
+        #btnDriverLogin:hover{
+            color: white;
+            background: blue;
+        }
+
+    </style>
+</head>
+<body>
+    <section>
+        <label id="lblDriver">Driver Login..</label>
+        <form>
+            <label for="username" id="lblUsername">Driver User Name</label><br>
+            <input type="text" id="username" name="username"><br>
+            <label for="password" id="lblPassword">Password</label><br>
+            <input type="password" id="password" name="password">
+            <button id="btnDriverLogin" type="button"><i><b>Login..</b></i></button>
+        </form>
+    </section>
+</body>
+<script src="../../asserts/js/jquery-3.6.1.min.js"></script>
+<script>
+
+</script>
+</html>

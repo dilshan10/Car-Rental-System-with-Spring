@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Loging Selection</title>
+    <link rel="stylesheet" href="../asserts/CSS/normalize.css">
+    <style>
+        body{
+            height: 100vh;
+            width: 99vw;
+            background: #494646;
+        }
+        body>section:nth-child(1)>label:nth-child(1){
+            height: fit-content;
+            width: fit-content;
+            color: white;
+            font-size: 7vh;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 13vh;
+            margin: auto;
+        }
+        body>section:nth-child(1)>img:nth-child(2){
+            position: absolute;
+            margin: auto;
+            left: 0;
+            right: 0;
+            top: 32vh;
+            width: 30vh;
+            height: fit-content;
+        }
+        body>section>form>select:nth-child(1){
+            height: 4vh;
+            width: 30vh;
+            position: absolute;
+            margin: auto;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+        body>section>form>button:nth-child(2){
+            height: 4vh;
+            width: 15vh;
+            position: absolute;
+            top: 55vh;
+            right: 0;
+            left: 0;
+            margin: auto;
+        }
+        body>section>form>button:nth-child(2):hover{
+            color: white;
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <label id="lblHeding"><b><i>..CAR RENTAL SYSTEM..</i></b></label>
+        <img src="../asserts/image/1welcome-poster-spectrum-brush-strokes-260nw-1146069941.webp">
+        <form>
+            <select name="loginOptions" id="loginOptions">
+                <option value="Guest">Guest</option>
+                <option value="Registered">Registered</option>
+                <option value="Driver">Driver</option>
+                <option value="Admin">Admin</option>
+            </select>
+            <button type="button" id="btn1"><B><i>To Login..</i></B></button>
+        </form>
+    </section>
+    <section>
+
+    </section>
+</body>
+<script src="../asserts/js/jquery-3.6.1.min.js"></script>
+<script>
+    $('#btn1').click(function (){
+        var Option = $('#loginOptions').val();
+
+        switch (Option) {
+            case "Admin" :
+                alert("Admin run")
+                break;
+            case "Registered" :
+                alert("Registered run")
+                break;
+            case "Driver" :
+                alert("Driver run")
+                break;
+            case "Guest" :
+                alert("Guest run")
+                break;
+        }
+    })
+    $('#loginOptions').keydown(function (event){
+        $('#btn1').focus();
+    })
+</script>
+</html>
