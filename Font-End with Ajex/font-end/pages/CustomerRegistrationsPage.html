@@ -199,7 +199,6 @@
             right: 0;
             top: 53vh;
             margin: auto;
-            color: white;
         }
 
         #btnNewCust:hover{
@@ -271,5 +270,36 @@
 <script src="../../asserts/js/jquery-3.6.1.min.js"></script>
 <script>
 
+    const custIDregEx = /^(C00-)[0-9]{3}$/;
+    const custNameregEx = /^[A-z/ ]{5,30}$/;
+    const custAddresssregEx = /^[0-9 A-z. ,/]{5,}$/;
+    const custTellregEx = /^[0-9]{10}$/;
+    const custEmailregEx = /^[A-z 0-9.,]{5,}$/;
+    const custPasswordregEx = /^[A-z 0-9.,]{5,}/;
+
+    let CustomerVali = [];
+
+    CustomerVali.push({reg:custIDregEx,field:$('#custID'),error:'Customer Id is not match to Valied Patten :C00-001'});
+    CustomerVali.push({reg:custNameregEx,field:$('#custName'),error: 'Customer Name is not match to Valied Patten'});
+    CustomerVali.push({reg:custAddresssregEx,field:$('#custAddress'),error:'Customer Id is not match to Valied Patten'});
+    CustomerVali.push({reg:custTellregEx,field:$('#custTell'),error: 'Customer Name is not match to Valied Patten'});
+    CustomerVali.push({reg:custEmailregEx,field:$('#custEmail'),error:'Customer Id is not match to Valied Patten'});
+    CustomerVali.push({reg:custPasswordregEx,field:$('#custPass'),error: 'Customer Name is not match to Valied Patten'});
+    CustomerVali.push({reg:custPasswordregEx,field:$('#custRePass'),error: 'Customer Name is not match to Valied Patten'});
+
+
+
+    $('#btnNewCust').click(function (){
+        var pass = $('#custPass').val();
+        var rePass = $('#custRePass').val();
+
+        if (pass == rePass){
+            console.log(pass,rePass);
+            alert("pass waord is match");
+        }else{
+            console.log(pass,rePass);
+            alert("plz Check password again..")
+        }
+    })
 </script>
 </html>
