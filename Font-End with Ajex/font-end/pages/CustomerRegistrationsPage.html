@@ -8,7 +8,7 @@
         body{
             height: 98vh;
             width: 100vw;
-            background: url("");
+            background: url("../../asserts/image/istockphoto-628453996-612x612.jpg");
             background-size: cover;
             position: relative;
         }
@@ -22,7 +22,9 @@
             right: 0;
             top: 2vh;
             margin: auto;
+            color: white;
         }
+
         body>section:nth-child(1)>hr:nth-child(2){
             position: absolute;
             width: 75vh;
@@ -31,12 +33,239 @@
             top: 8vh;
             margin: auto;
         }
+
+        body>section:nth-child(1)>section:nth-child(3){
+            height: 80vh;
+            width: 90vh;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 20vh;
+            margin: auto;
+        }
+
+        #lblID{
+            position: absolute;
+            height: fit-content;
+            width: fit-content;
+            left: 0;
+            right: 0;
+            top: 3vh;
+            margin: auto;
+            color: white;
+        }
+
+        #custID{
+            position: absolute;
+            height: fit-content;
+            width: 30%;
+            left: 0;
+            right: 0;
+            top: 6vh;
+            margin: auto;
+        }
+
+        #lblCustName{
+            position: absolute;
+            height: fit-content;
+            width: fit-content;
+            left: 0;
+            right: 0;
+            top: 10vh;
+            margin: auto;
+            color: white;
+        }
+
+        #custName{
+            position: absolute;
+            height: fit-content;
+            width: 70%;
+            left: 0;
+            right: 0;
+            top: 13vh;
+            margin: auto;
+        }
+
+        #lblCustAddress{
+            position: absolute;
+            height: fit-content;
+            width: fit-content;
+            left: 0;
+            right: 0;
+            top: 17vh;
+            margin: auto;
+            color: white;
+        }
+
+        #custAddress{
+            position: absolute;
+            height: fit-content;
+            width: 80%;
+            left: 0;
+            right: 0;
+            top: 20vh;
+            margin: auto;
+        }
+
+        #lblCustTell{
+            position: absolute;
+            height: fit-content;
+            width: fit-content;
+            left: 0;
+            right: 0;
+            top: 24vh;
+            margin: auto;
+            color: white;
+        }
+
+        #custTell{
+            position: absolute;
+            height: fit-content;
+            width: fit-content;
+            left: 0;
+            right: 0;
+            top: 27vh;
+            margin: auto;
+        }
+
+        #lblCUstEmail{
+            position: absolute;
+            height: fit-content;
+            width: fit-content;
+            left: 0;
+            right: 0;
+            top: 31vh;
+            margin: auto;
+            color: white;
+        }
+
+        #custEmail{
+            position: absolute;
+            height: fit-content;
+            width: 50%;
+            left: 0;
+            right: 0;
+            top: 34vh;
+            margin: auto;
+        }
+
+        #lblCustPass{
+            position: absolute;
+            height: fit-content;
+            width: fit-content;
+            left: 0;
+            right: 0;
+            top: 37vh;
+            margin: auto;
+            color: white;
+        }
+
+        #custPass{
+            position: absolute;
+            height: fit-content;
+            width: fit-content;
+            left: 0;
+            right: 0;
+            top: 40vh;
+            margin: auto;
+        }
+
+        #lblRePass{
+            position: absolute;
+            height: fit-content;
+            width: fit-content;
+            left: 0;
+            right: 0;
+            top: 44vh;
+            margin: auto;
+            color: white;
+        }
+
+        #custRePass{
+            position: absolute;
+            height: fit-content;
+            width: fit-content;
+            left: 0;
+            right: 0;
+            top: 47vh;
+            margin: auto;
+        }
+
+        #btnNewCust{
+            position: absolute;
+            height: fit-content;
+            width: fit-content;
+            left: 0;
+            right: 0;
+            top: 53vh;
+            margin: auto;
+            color: white;
+        }
+
+        #btnNewCust:hover{
+            background: blue;
+            color: white;
+        }
+
+        body>section:nth-child(1)>section:nth-child(4){
+            height: 70vh;
+            width: 30vh;
+            position: absolute;
+            right: 10vh;
+            top: 10vh;
+            margin: auto;
+        }
+
+        body>section:nth-child(1)>section:nth-child(4)>div:nth-child(1){
+            height: 30%;
+            width: 100%;
+            background: url("../../asserts/image/431.jpeg");
+            background-size: cover;
+        }
+
+        body>section:nth-child(1)>section:nth-child(4)>div:nth-child(2){
+            height: 30%;
+            width: 100%;
+            background: url("../../asserts/image/hand-car-keys-transportation-driving-260nw-101145013.webp");
+            background-size: cover;
+        }
+
+        body>section:nth-child(1)>section:nth-child(4)>div:nth-child(3){
+            height: 30%;
+            width: 100%;
+            background: url("../../asserts/image/images (1).jpeg");
+            background-size: cover;
+        }
     </style>
 </head>
 <body>
     <section>
         <label>New Customer Registrations Form </label>
         <hr>
+        <section>
+            <form>
+                <label id="lblID" for="custID">Customer ID</label><br>
+                <input type="text" name="custID" id="custID"><br>
+                <label for="custName" id="lblCustName">Customer Name</label><br>
+                <input type="text" name="custName" id="custName"><br>
+                <label for="custAddress" id="lblCustAddress">Customer Address</label><br>
+                <input type="text" name="custAddress" id="custAddress"><br>
+                <label for="custTell" id="lblCustTell">Customer TellNumber</label><br>
+                <input type="text" name="custTell" id="custTell"><br>
+                <label for="custEmail" id="lblCUstEmail">Customer e-mail</label><br>
+                <input type="email" name="custEmail" id="custEmail"><br>
+                <label for="custPass" id="lblCustPass">Password</label><br>
+                <input type="password" name="custPass" id="custPass"><br>
+                <label for="custRePass" id="lblRePass">Re-Enter Password</label><br>
+                <input type="password" name="custRePass" id="custRePass"><br>
+                <button type="button" id="btnNewCust">Create new Login</button>
+            </form>
+        </section>
+        <section>
+            <div></div>
+            <div></div>
+            <div></div>
+        </section>
     </section>
 </body>
 <script src="../../asserts/js/jquery-3.6.1.min.js"></script>
