@@ -1,5 +1,6 @@
 package lk.chathuranga.spring.entity;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -8,21 +9,16 @@ import lombok.ToString;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Data
 @ToString
 @Entity
-public class CarDetails {
+public class Customer {
     @Id
-    String regNumber;
-    String Brand;
-    String Type;
-    Double freeMileage;
-    Double priceForExtraKm;
-    String color;
-    int numOfPass;
-    String transmissionType;
-    String fuelType;
-    String status;
+    private String custID;
+    private String name;
+    private String address;
+    private String tellNum;
+    private String emailAddress;
 }
