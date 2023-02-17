@@ -1,16 +1,20 @@
-package lk.chathuranga.spring.dto;
-
+package lk.chathuranga.spring.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-@NoArgsConstructor
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 @AllArgsConstructor
+@NoArgsConstructor
 @Data
 @ToString
-public class DriverDTO {
+@Entity
+public class Driver {
+    @Id
     private String driID;
     private String driName;
     private String driAddress;
