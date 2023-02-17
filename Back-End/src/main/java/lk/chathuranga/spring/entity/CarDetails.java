@@ -1,16 +1,15 @@
-package lk.chathuranga.spring.dto;
-
+package lk.chathuranga.spring.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Data
 @ToString
-public class CarDetailsDTO {
+public class CarDetails {
     String regNumber;
     String Brand;
     String Type;
