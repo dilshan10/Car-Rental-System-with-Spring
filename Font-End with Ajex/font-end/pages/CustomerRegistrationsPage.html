@@ -287,7 +287,67 @@
     CustomerVali.push({reg:custPasswordregEx,field:$('#custPass'),error: 'Customer Name is not match to Valied Patten'});
     CustomerVali.push({reg:custPasswordregEx,field:$('#custRePass'),error: 'Customer Name is not match to Valied Patten'});
 
+    $('#custID,#custName,#custAddress,#custTell,#custEmail,#custPass,#custRePass').on('keyup',function (){
+        checkValied();
+    })
 
+    $('#custID,#custName,#custAddress,#custTell,#custEmail,#custPass,#custRePass').on('blur',function (){
+        checkValied();
+    })
+
+    function checkValied() {
+           let error = 0;
+        for (let validation of CustomerVali){
+               if(validation.reg.test(validation.field.val())){
+                   textSuccess(validation.field,"");
+               }else {
+                   error = error+1;
+                    setTextError(validation.field,validation.error);
+               }
+        }
+        setButtonState(error);
+    }
+
+    function check(regex,field) {
+        let inputValue = field.val();
+        return regex.test(inputValue) ? true : false;
+    }
+
+    function setTextError(field,error) {
+            if (field.val().length <= 0) {
+                defaulText(field,"");
+            } else {
+               field.css('border', '2px solid red');
+                field.parent().children('span').text(error);
+            }
+    }
+
+    function textSuccess(field,error) {
+        if (field.val().length <= 0){
+            defaulText(field,"");
+        }else {
+            field.css('border','2px solid green');
+            field.parent().children('span').text(error);
+        }
+    }
+
+    function defaulText(field,error) {
+            field.css('border','2px solid red');
+            field.parent().children('span').text(error);
+    }
+
+    function focusText(field) {
+        field.focus();
+    }
+
+    function setButtonState(value){
+        if (value>0){
+            $("#btnNewCust").attr('disabled',true);
+
+        }else{
+            $("#btnNewCust").attr('disabled',false);
+        }
+    }
 
     $('#btnNewCust').click(function (){
         var pass = $('#custPass').val();
