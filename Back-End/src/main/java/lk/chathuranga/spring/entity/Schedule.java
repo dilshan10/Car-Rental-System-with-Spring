@@ -1,15 +1,21 @@
-package lk.chathuranga.spring.dto;
+package lk.chathuranga.spring.entity;
+
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-@NoArgsConstructor
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 @AllArgsConstructor
+@NoArgsConstructor
 @Data
 @ToString
-public class scheduleDTO {
+@Entity
+public class Schedule {
+    @Id
     String SID;
     String Date;
     String Time;
