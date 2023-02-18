@@ -242,7 +242,7 @@
         <label>New Customer Registrations Form </label>
         <hr>
         <section>
-            <form>
+            <form id="NewCustomerForm">
                 <label id="lblID" for="custID">Customer ID</label><br>
                 <input type="text" name="custID" id="custID"><br>
                 <label for="custName" id="lblCustName">Customer Name</label><br>
@@ -349,17 +349,33 @@
         }
     }
 
+    let baseURL =
+
     $('#btnNewCust').click(function (){
+
+        var formData = $('#NewCustomerForm').serialize()
+
         var pass = $('#custPass').val();
         var rePass = $('#custRePass').val();
 
         if (pass == rePass){
             console.log(pass,rePass);
-            alert("pass waord is match");
+            $.ajax({
+                url:baseURL+"customerNew",
+                method:"post",
+                data:formData,
+                dataType:"json",
+                success:function (res){
+                    alert(res.message)
+                },
+                error:function (error){
+                    alert(error.message)
+                }
+            })
         }else{
             console.log(pass,rePass);
             alert("plz Check password again..")
         }
     })
 </script>
-</html>
+</html>f
