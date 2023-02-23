@@ -42,7 +42,7 @@
         }
 
         body{
-            background: url("../../asserts/image/pexels-jagmeet-singh-1134857.jpg");
+            background: url("../../asserts/image/pexels-jagmeet-singh-1134857.jpg ");
             background-size: cover;
             height: 100vh;
             width: 100vw;
@@ -79,9 +79,9 @@
             margin: auto;
         }
         body>section:nth-child(5){
+            border: 2px solid black;
             height: 83vh;
             width: 26vw;
-            background: blueviolet;
             position: absolute;
             right: 1vw;
             top: 8vh;
@@ -91,11 +91,16 @@
         body>section:nth-child(6){
             height: 51vh;
             width: 71vw;
-            background: chartreuse;
             position: absolute;
             top: 40vh;
             left: 1vw;
             margin: auto;
+        }
+
+        body>section:nth-child(6)>table:nth-child(1){
+            height: 100%;
+            width: 100%;
+            border: 2px solid black;
         }
 
         footer{
@@ -106,6 +111,7 @@
             bottom: 0;
             margin: auto;
         }
+
     </style>
 </head>
 <body>
@@ -116,8 +122,26 @@
     <section></section>
     <section></section>
     <section></section>
-    <section></section>
-    <section></section>
+    <section>
+        <label>Customer ID :</label><br>
+        <label></label><br>
+        <label>Customer Name : </label><br>
+        <label>Customer Address : </label><br>
+        <label>Customer Tel-Number : </label><br>
+        <label>Customer E-mail Address : </label><br>
+    </section>
+    <section>
+        <table>
+            <thead>
+                <tr>
+                    <th >Rent ID</th><th>Date</th><th>Time</th><th>Loss Damage Payment</th><th>Duration</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td></td></tr>
+            </tbody>
+        </table>
+    </section>
     <footer></footer>
 </body>
 <script src="../../asserts/js/jquery-3.6.1.min.js"></script>

@@ -14,6 +14,6 @@ public class RentDTO {
     String ReID;
     String Date;
     String Time;
-    Double LossDamegePayment;
+    Double LossDamagePayment;
     Double duration;
 }
