@@ -5,22 +5,231 @@
     <title>Admin Controller SPA</title>
     <link rel="stylesheet" href="../../asserts/CSS/normalize.css">
     <style>
+        /* Section 1 (BashBoard)*/
+        body{
+            position: relative;
+        }
+        body>section:nth-child(1){
+            height: 7vh;
+            width: 100vw;
+            background: black;
+            position: fixed;
+            top: 0;
+            margin: auto;
+        }
 
+        body>section:nth-child(1)>label:nth-child(1){
+            height: fit-content;
+            width: fit-content;
+            color: white;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 5vh;
+            margin: auto;
+            font-size: 5vh;
+        }
+
+        body>section:nth-child(1)>div:nth-child(2){
+            height: 5vh;
+            width: 50vw;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 4vh;
+            margin: auto;
+        }
+
+        body>section:nth-child(1)>div:nth-child(2)>div{
+            background: white;
+            height: 100%;
+            width:calc(100%/10);
+            border:2px solid black;
+            display: inline-block;
+            color: black;
+            border-radius: 15%;
+            text-align: center;
+        }
+
+        body>section:nth-child(1)>div:nth-child(2)>div:hover{
+            background: blue;
+            border:2px solid red;
+            color: white;
+        }
+
+        body>section:nth-child(2)>section:nth-child(1){
+            height: 100vh;
+            width: 100vw;
+            background: chartreuse;
+        }
+
+        body>section:nth-child(2)>section:nth-child(2){
+            height: 100vh;
+            width: 100vw;
+            background: blue;
+        }
+
+        body>section:nth-child(2)>section:nth-child(3){
+            height: 100vh;
+            width: 100vw;
+            background: gold;
+        }
+
+        body>section:nth-child(3){
+            height: 7vh;
+            width: 100vw;
+            background: red;
+            position: fixed;
+            bottom: 0;
+            margin: auto;
+        }
     </style>
 </head>
 <body>
-    <section id="Dashboard">
-        <section></section>
-        <section></section>
-        <section></section>
+    <section id="Header">
+        <label id="MainLbl">Bash Board</label>
+        <div>
+            <div id="B1">Dash</div>
+            <div id="B2">Cust</div>
+            <div id="B3">Cars</div>
+            <div id="B4"></div>
+            <div id="B5"></div>
+            <div id="B6"></div>
+            <div id="B7"></div>
+            <div id="B8"></div>
+            <div id="B9"></div>
+        </div>
     </section>
-    <section>
+    <section id="body">
+        <section id="P1"></section>
+        <section id="P2"></section>
+        <section id="P3"></section>
+        <section id="P4"></section>
+        <section id="P5"></section>
+        <section id="P6"></section>
+        <section id="P7"></section>
+        <section id="P8"></section>
+        <section id="P9"></section>
     </section>
-    <section>
+    <section id="footer">
+
     </section>
 </body>
 <script src="../../asserts/js/jquery-3.6.1.min.js"></script>
 <script>
+    function fristViwe(){
+        $('#P1').css("display", "block");
+        $("#P2").css("display", "none");
+        $("#P3").css("display", "none");
+        $("#P4").css("display", "none");
+        $("#P5").css("display", "none");
+        $("#P6").css("display", "none");
+        $("#P7").css("display", "none");
+        $("#P8").css("display", "none");
+        $("#P9").css("display", "none");
+    }
+    fristViwe();
+
+    $('#B1').click(function (){
+        fristViwe();
+    })
+
+    $('#B2').click(function (){
+        $('#P1').css("display", "none");
+        $("#P2").css("display", "block");
+        $("#P3").css("display", "none");
+        $("#P4").css("display", "none");
+        $("#P5").css("display", "none");
+        $("#P6").css("display", "none");
+        $("#P7").css("display", "none");
+        $("#P8").css("display", "none");
+        $("#P9").css("display", "none");
+    })
+
+    $('#B3').click(function (){
+        $('#P1').css("display", "none");
+        $("#P2").css("display", "none");
+        $("#P3").css("display", "block");
+        $("#P4").css("display", "none");
+        $("#P5").css("display", "none");
+        $("#P6").css("display", "none");
+        $("#P7").css("display", "none");
+        $("#P8").css("display", "none");
+        $("#P9").css("display", "none");
+    })
+
+    $('#B4').click(function (){
+        $('#P1').css("display", "none");
+        $("#P2").css("display", "none");
+        $("#P3").css("display", "none");
+        $("#P4").css("display", "block");
+        $("#P5").css("display", "none");
+        $("#P6").css("display", "none");
+        $("#P7").css("display", "none");
+        $("#P8").css("display", "none");
+        $("#P9").css("display", "none");
+    })
+
+    $('#B5').click(function (){
+        $('#P1').css("display", "none");
+        $("#P2").css("display", "none");
+        $("#P3").css("display", "none");
+        $("#P4").css("display", "none");
+        $("#P5").css("display", "block");
+        $("#P6").css("display", "none");
+        $("#P7").css("display", "none");
+        $("#P8").css("display", "none");
+        $("#P9").css("display", "none");
+    })
+
+    $('#B6').click(function (){
+        $('#P1').css("display", "none");
+        $("#P2").css("display", "none");
+        $("#P3").css("display", "none");
+        $("#P4").css("display", "none");
+        $("#P5").css("display", "none");
+        $("#P6").css("display", "block");
+        $("#P7").css("display", "none");
+        $("#P8").css("display", "none");
+        $("#P9").css("display", "none");
+    })
+
+    $('#B7').click(function (){
+        $('#P1').css("display", "none");
+        $("#P2").css("display", "none");
+        $("#P3").css("display", "none");
+        $("#P4").css("display", "none");
+        $("#P5").css("display", "none");
+        $("#P6").css("display", "none");
+        $("#P7").css("display", "block");
+        $("#P8").css("display", "none");
+        $("#P9").css("display", "none");
+    })
+
+    $('#B8').click(function (){
+        $('#P1').css("display", "none");
+        $("#P2").css("display", "none");
+        $("#P3").css("display", "none");
+        $("#P4").css("display", "none");
+        $("#P5").css("display", "none");
+        $("#P6").css("display", "none");
+        $("#P7").css("display", "none");
+        $("#P8").css("display", "block");
+        $("#P9").css("display", "none");
+    })
+
+    $('#B9').click(function (){
+        $('#P1').css("display", "none");
+        $("#P2").css("display", "none");
+        $("#P3").css("display", "none");
+        $("#P4").css("display", "none");
+        $("#P5").css("display", "none");
+        $("#P6").css("display", "none");
+        $("#P7").css("display", "none");
+        $("#P8").css("display", "none");
+        $("#P9").css("display", "block");
+    })
+
 
 </script>
 </html>
