@@ -79,13 +79,129 @@
             margin: auto;
         }
         body>section:nth-child(5){
-            border: 2px solid black;
             height: 83vh;
             width: 26vw;
             position: absolute;
             right: 1vw;
             top: 8vh;
             margin: auto;
+        }
+
+        body>section:nth-child(5)>label{
+            height: fit-content;
+            width: fit-content;
+            font-size: 3vh;
+            position: absolute;
+            margin: auto;
+        }
+
+        body>section:nth-child(5)>label:nth-child(1){
+            left: 2vw;
+        }
+        body>section:nth-child(5)>label:nth-child(3){
+            right: 0;
+            left: 0;
+            font-style: italic;
+            color: red;
+        }
+
+        body>section:nth-child(5)>label:nth-child(5){
+            left: 2vw;
+        }
+
+        body>section:nth-child(5)>label:nth-child(7){
+            right: 0;
+            left: 0;
+            font-style: italic;
+            color: red;
+        }
+
+        body>section:nth-child(5)>label:nth-child(9){
+            left: 2vw;
+        }
+
+        body>section:nth-child(5)>label:nth-child(11){
+            right: 0;
+            left: 0;
+            font-style: italic;
+            color: red;
+        }
+
+        body>section:nth-child(5)>label:nth-child(13){
+            left: 2vw;
+        }
+
+        body>section:nth-child(5)>label:nth-child(15){
+            right: 0;
+            left: 0;
+            font-style: italic;
+            color: red;
+        }
+
+        body>section:nth-child(5)>label:nth-child(17){
+            left: 2vw;
+        }
+
+        body>section:nth-child(5)>label:nth-child(19){
+            right: 0;
+            left: 0;
+            font-style: italic;
+            color: red;
+        }
+
+        body>section:nth-child(5)>div:nth-child(21){
+            height: 20vh;
+            width: 100%;
+            border: 2px solid red;
+            position: absolute;
+            top: 35vh;
+            left: 0;
+            right: 0;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        body>section:nth-child(5)>div:nth-child(22){
+            height: 20vh;
+            width: 100%;
+            border: 2px solid red;
+            position: absolute;
+            top: 60vh;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+
+        body>section:nth-child(5)>div:nth-child(21)>div:nth-child(1){
+            height: 100%;
+            width: 400%;
+            display: flex;
+            animation-name: MY-ANIMATION;
+            animation-duration: 10s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            animation-timing-function: linear;
+        }
+
+        body>section:nth-child(5)>div:nth-child(21)>div:nth-child(1)>div{
+            height: 100%;
+            width: 100%;
+        }
+
+        body>section:nth-child(5)>div:nth-child(21)>div:nth-child(1)>div:nth-child(1){
+            background: aqua;
+        }
+
+        body>section:nth-child(5)>div:nth-child(21)>div:nth-child(1)>div:nth-child(2){
+            background: red;
+        }
+
+        body>section:nth-child(5)>div:nth-child(21)>div:nth-child(1)>div:nth-child(3){
+            background: black;
+        }
+
+        body>section:nth-child(5)>div:nth-child(21)>div:nth-child(1)>div:nth-child(4){
+            background: blue;
         }
 
         body>section:nth-child(6){
@@ -112,6 +228,21 @@
             margin: auto;
         }
 
+        @keyframes MY-ANIMATION {
+            0%,20%{
+                transform: translateX(0%);
+            }
+            30%,50%{
+                transform: translateX(-25%);
+            }
+            60%,80%{
+                transform: translateX(-50%);
+            }
+            90%,100%{
+                transform: translateX(-75%);
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -124,11 +255,24 @@
     <section></section>
     <section>
         <label>Customer ID :</label><br>
-        <label></label><br>
+        <label id="lbl1"></label><br>
         <label>Customer Name : </label><br>
+        <label id="lbl2"></label><br>
         <label>Customer Address : </label><br>
+        <label id="lbl3"></label><br>
         <label>Customer Tel-Number : </label><br>
+        <label id="lbl4"></label><br>
         <label>Customer E-mail Address : </label><br>
+        <label id="lbl5"></label><br>
+        <div>
+            <div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div></div>
     </section>
     <section>
         <table>
