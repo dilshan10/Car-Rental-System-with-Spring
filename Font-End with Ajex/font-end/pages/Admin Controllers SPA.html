@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Admin Controller SPA</title>
     <link rel="stylesheet" href="../../asserts/CSS/normalize.css">
+    <link rel="stylesheet" href="../../asserts/fonts/css/all.min.css">
     <style>
         /* Section 1 (BashBoard)*/
         body{
@@ -51,16 +52,82 @@
             text-align: center;
         }
 
+        body>section:nth-child(1)>div:nth-child(2)>div>i{
+            font-size: 200%;
+        }
         body>section:nth-child(1)>div:nth-child(2)>div:hover{
             background: blue;
             border:2px solid red;
             color: white;
         }
+        /*-----------------------------------------------------------------------------*/
 
         body>section:nth-child(2)>section:nth-child(1){
             height: 100vh;
             width: 100vw;
             background: chartreuse;
+        }
+
+        body>section:nth-child(2)>section:nth-child(1)>div:nth-child(1){
+            width: 99VW;
+            height: 30vh;
+            border: 2px solid black;
+            position: absolute;
+            top: 8vh;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+
+        body>section:nth-child(2)>section:nth-child(1)>div:nth-child(1)>div{
+            height: 27vh;
+            width: 30vw;
+            border: 2px solid red;
+        }
+
+        body>section:nth-child(2)>section:nth-child(1)>div:nth-child(1)>div:nth-child(1){
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 3vw;
+            margin: auto;
+        }
+        body>section:nth-child(2)>section:nth-child(1)>div:nth-child(1)>div:nth-child(2){
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            margin: auto;
+        }
+        body>section:nth-child(2)>section:nth-child(1)>div:nth-child(1)>div:nth-child(3){
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 3vw;
+            margin: auto;
+        }
+
+        body>section:nth-child(2)>section:nth-child(1)>div:nth-child(2){
+            width: 99vw;
+            height: 10vh;
+            border: 2px solid black;
+            position: absolute;
+            top: 39vh;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+
+        body>section:nth-child(2)>section:nth-child(1)>div:nth-child(3){
+            width: 99vw;
+            height: 40vh;
+            border: 2px solid black;
+            position: absolute;
+            top: 50vh;
+            left: 0;
+            right: 0;
+            margin: auto;
         }
 
         body>section:nth-child(2)>section:nth-child(2){
@@ -73,6 +140,42 @@
             height: 100vh;
             width: 100vw;
             background: gold;
+        }
+
+        body>section:nth-child(2)>section:nth-child(4){
+            height: 100vh;
+            width: 100vw;
+            background: silver;
+        }
+
+        body>section:nth-child(2)>section:nth-child(5){
+            height: 100vh;
+            width: 100vw;
+            background: purple;
+        }
+
+        body>section:nth-child(2)>section:nth-child(6){
+            height: 100vh;
+            width: 100vw;
+            background: white;
+        }
+
+        body>section:nth-child(2)>section:nth-child(7){
+            height: 100vh;
+            width: 100vw;
+            background: darkgreen;
+        }
+
+        body>section:nth-child(2)>section:nth-child(8){
+            height: 100vh;
+            width: 100vw;
+            background: greenyellow;
+        }
+
+        body>section:nth-child(2)>section:nth-child(9){
+            height: 100vh;
+            width: 100vw;
+            background: royalblue;
         }
 
         body>section:nth-child(3){
@@ -89,19 +192,33 @@
     <section id="Header">
         <label id="MainLbl">Bash Board</label>
         <div>
-            <div id="B1">Dash</div>
-            <div id="B2">Cust</div>
-            <div id="B3">Cars</div>
-            <div id="B4"></div>
-            <div id="B5"></div>
-            <div id="B6"></div>
-            <div id="B7"></div>
-            <div id="B8"></div>
-            <div id="B9"></div>
+            <div id="B1"><i class="fa-solid fa-address-card"></i></div>
+            <div id="B2">Customer Details</div>
+            <div id="B3">Cars Details</div>
+            <div id="B4">Rent</div>
+            <div id="B5">Rent Details</div>
+            <div id="B6">Driver Details</div>
+            <div id="B7">Payments Details</div>
+            <div id="B8">Schedule Details</div>
+            <div id="B9"><i class="bi bi-person-circle"></i></div>
         </div>
     </section>
     <section id="body">
-        <section id="P1"></section>
+        <section id="P1">
+            <div>
+                <div>
+
+                </div>
+                <div>
+
+                </div>
+                <div>
+
+                </div>
+            </div>
+            <div></div>
+            <div></div>
+        </section>
         <section id="P2"></section>
         <section id="P3"></section>
         <section id="P4"></section>
@@ -127,6 +244,7 @@
         $("#P7").css("display", "none");
         $("#P8").css("display", "none");
         $("#P9").css("display", "none");
+        $('#MainLbl').text("Dash Board");
     }
     fristViwe();
 
@@ -144,6 +262,7 @@
         $("#P7").css("display", "none");
         $("#P8").css("display", "none");
         $("#P9").css("display", "none");
+        $('#MainLbl').text("Customer Details");
     })
 
     $('#B3').click(function (){
@@ -156,6 +275,7 @@
         $("#P7").css("display", "none");
         $("#P8").css("display", "none");
         $("#P9").css("display", "none");
+        $('#MainLbl').text("Cars Details");
     })
 
     $('#B4').click(function (){
@@ -168,6 +288,7 @@
         $("#P7").css("display", "none");
         $("#P8").css("display", "none");
         $("#P9").css("display", "none");
+        $('#MainLbl').text("Rents");
     })
 
     $('#B5').click(function (){
@@ -180,6 +301,7 @@
         $("#P7").css("display", "none");
         $("#P8").css("display", "none");
         $("#P9").css("display", "none");
+        $('#MainLbl').text("Rent Details");
     })
 
     $('#B6').click(function (){
@@ -192,6 +314,7 @@
         $("#P7").css("display", "none");
         $("#P8").css("display", "none");
         $("#P9").css("display", "none");
+        $('#MainLbl').text("Driver Details");
     })
 
     $('#B7').click(function (){
@@ -204,6 +327,7 @@
         $("#P7").css("display", "block");
         $("#P8").css("display", "none");
         $("#P9").css("display", "none");
+        $('#MainLbl').text("Payments Details");
     })
 
     $('#B8').click(function (){
@@ -216,6 +340,7 @@
         $("#P7").css("display", "none");
         $("#P8").css("display", "block");
         $("#P9").css("display", "none");
+        $('#MainLbl').text("Schedule Details");
     })
 
     $('#B9').click(function (){
@@ -228,6 +353,7 @@
         $("#P7").css("display", "none");
         $("#P8").css("display", "none");
         $("#P9").css("display", "block");
+        $('#MainLbl').text("User Details");
     })
 
 
