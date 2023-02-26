@@ -106,6 +106,14 @@
 </body>
 <script src="../../asserts/js/jquery-3.6.1.min.js"></script>
 <script>
-
+    $('#btnDriverLogin').click(function (){
+        var username = $('#username').val();
+        var password =  $('#password').val();
+        if (username=="root" && password=="1234"){
+            $(location).attr('href',"DriverDashBoard.html")
+        }else {
+            alert("Plz check username and password..!")
+        }
+    })
 </script>
 </html>

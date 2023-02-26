@@ -2,9 +2,68 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Driver Dash Board</title>
+    <link rel="stylesheet" href="../../asserts/CSS/normalize.css">
+    <style>
+        body>section:nth-child(1)>div:nth-child(1){
+            width: 95vw;
+            height: 40vh;
+            border: 2px solid red;
+            position: absolute;
+            top: 1vh;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+        body>section:nth-child(1)>div:nth-child(2){
+            width: 95vw;
+            height: 50vh;
+            border: 2px solid red;
+            position: absolute;
+            bottom: 1vh;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+        body>section:nth-child(1)>div:nth-child(2)>table:nth-child(1){
+            height: 100%;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
+    <section>
+        <div>
+            <div>
 
+            </div>
+            <div>
+
+            </div>
+            <div>
+
+            </div>
+        </div>
+        <div>
+            <table id="tblDriverSchedule">
+                <thead>
+                    <tr>
+                        <th>Schedule Id</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+    </section>
 </body>
+<script src="../../asserts/js/jquery-3.6.1.min.js"></script>
+<script>
+    $('#tblDriverSchedule').dblclick(function (){
+        $(location).attr('href',"DriverSchedulePage.html")
+    })
+</script>
 </html>

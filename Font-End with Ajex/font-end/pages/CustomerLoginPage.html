@@ -111,10 +111,8 @@
     })
 
     $('#btnCustomerLogin').click(function (){
-        console.log("run")
         var username = $('#userName').val();
         var password = $('#Password').val();
-        console.log(username,password);
         if (username == "root" && password == "1234"){
             $(location).attr('href',"CustomerBashBoard.html")
         }else {
