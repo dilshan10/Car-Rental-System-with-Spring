@@ -118,7 +118,7 @@
         var username = $('#adminUserName').val();
         var password = $('#adminPassword').val();
         if (username == "root" && password == "1234"){
-            alert("hello Admin..!")
+            $(location).attr('href',"AdminControllersSPA.html")
         }else {
             alert("Plz check username and password..!")
         }

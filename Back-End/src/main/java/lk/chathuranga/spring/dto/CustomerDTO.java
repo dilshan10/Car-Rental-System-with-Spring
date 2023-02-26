@@ -13,6 +13,7 @@ public class CustomerDTO {
     private String custID;
     private String name;
     private String address;
+    private String DOB;
     private String tellNum;
     private String emailAddress;
 }

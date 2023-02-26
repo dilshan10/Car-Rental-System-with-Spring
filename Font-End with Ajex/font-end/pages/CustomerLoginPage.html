@@ -115,8 +115,8 @@
         var username = $('#userName').val();
         var password = $('#Password').val();
         console.log(username,password);
-        if (username == "root1" && password == "1234"){
-            alert("hello user...")
+        if (username == "root" && password == "1234"){
+            $(location).attr('href',"CustomerBashBoard.html")
         }else {
             alert("Plz check username and password..!")
         }

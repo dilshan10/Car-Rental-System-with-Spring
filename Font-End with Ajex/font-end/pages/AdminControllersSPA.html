@@ -138,19 +138,23 @@
         }
 
         body>section:nth-child(2)>section:nth-child(1)>div:nth-child(2)>div:nth-child(1)>div:nth-child(1){
-            background: aqua;
+            background: url("../../asserts/image/8c44f92749d325884896551e8a34abf5.jpg");
+            background-size: 100%;
         }
 
         body>section:nth-child(2)>section:nth-child(1)>div:nth-child(2)>div:nth-child(1)>div:nth-child(2){
-            background: red;
+            background: url("../../asserts/image/25004ee5ac71ae36a688c44fb3be566c.jpg");
+            background-size: inherit;
         }
 
         body>section:nth-child(2)>section:nth-child(1)>div:nth-child(2)>div:nth-child(1)>div:nth-child(3){
-            background: yellow;
+            background: url("../../asserts/image/c5f4ac3de9246ba96d72fa55878fd679 (1).jpg");
+            background-size: inherit;
         }
 
         body>section:nth-child(2)>section:nth-child(1)>div:nth-child(2)>div:nth-child(1)>div:nth-child(4){
-            background: blue;
+            background: url("../../asserts/image/images (1).jpeg");
+            background-size: inherit;
         }
 
         body>section:nth-child(2)>section:nth-child(1)>div:nth-child(3){
@@ -163,11 +167,84 @@
             right: 0;
             margin: auto;
         }
+        /*----------------------------------------------------------------------------------------------*/
 
         body>section:nth-child(2)>section:nth-child(2){
             height: 100vh;
             width: 100vw;
+            background: url("../../asserts/image/hand-car-keys-transportation-driving-260nw-101145013.webp");
+            background-size: cover;
+        }
+
+        body>section:nth-child(2)>section:nth-child(2)>div:nth-child(1){
+            height: 30vh;
+            width: 90vw;
+            border: 2px solid black;
+            position: absolute;
+            top: 11vh;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+
+        body>section:nth-child(2)>section:nth-child(2)>div:nth-child(2){
+            height:10vh;
+            width: 50vw;
+            border: 2px solid black;
+            position: absolute;
+            bottom: 47vh;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+
+        body>section:nth-child(2)>section:nth-child(2)>div:nth-child(2)>button{
+            height: 8vh;
+            width: 10vw;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            border-radius: 5px;
+        }
+        body>section:nth-child(2)>section:nth-child(2)>div:nth-child(2)>button:hover{
+            height: 7vh;
+            width: 8vw;
             background: blue;
+            color: white;
+        }
+
+        body>section:nth-child(2)>section:nth-child(2)>div:nth-child(2)>button:nth-child(1){
+            left: 5vw;
+        }
+
+        body>section:nth-child(2)>section:nth-child(2)>div:nth-child(2)>button:nth-child(2){
+            left: 0;
+            right: 0;
+            background: gold;
+        }
+
+        body>section:nth-child(2)>section:nth-child(2)>div:nth-child(2)>button:nth-child(3){
+            right: 5vw;
+            background: red;
+        }
+
+
+        body>section:nth-child(2)>section:nth-child(2)>div:nth-child(3){
+            height: 35vh;
+            width: 95%;
+            border: 2px solid black;
+            position: absolute;
+            bottom: 9vh;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+
+        body>section:nth-child(2)>section:nth-child(2)>div:nth-child(3)>table:nth-child(1) {
+            height: 100%;
+            width: 100%;
+            color: darkred;
         }
 
         body>section:nth-child(2)>section:nth-child(3){
@@ -269,7 +346,45 @@
             </div>
             <div></div>
         </section>
-        <section id="P2"></section>
+        <section id="P2">
+            <diV>
+                <form>
+                    <label for="CustID"></label>
+                    <input id="CustID" name="CustID" type="text">
+                    <label for="CUstName"></label>
+                    <input id="CUstName" name="CustName" type="text">
+                    <label></label>
+                    <input>
+                    <label></label>
+                    <input>
+                    <label></label>
+                    <input>
+                </form>
+            </diV>
+            <div>
+                <button>Save</button>
+                <button>Update</button>
+                <button>Delete</button>
+            </div>
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Customer ID</th>
+                            <th>Customer Name</th>
+                            <th>Customer Address</th>
+                            <th>Customer Tell-Number</th>
+                            <th>Customer E-mail</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>C00-001</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
         <section id="P3"></section>
         <section id="P4"></section>
         <section id="P5"></section>
