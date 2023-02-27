@@ -9,7 +9,7 @@ public interface DriverService {
 
     public void updateDriver(DriverDTO dto);
 
-    public void deleteDriver(DriverDTO dto);
+    public void deleteDriver(String id);
 
     public ArrayList<DriverDTO>loadAllDriver();
 }
