@@ -16,5 +16,6 @@ public class CustomerDTO {
     private String DOB;
     private String tellNum;
     private String emailAddress;
+    private String imgPath;
 }
 

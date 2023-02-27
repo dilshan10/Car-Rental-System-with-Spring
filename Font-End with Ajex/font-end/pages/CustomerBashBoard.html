@@ -52,7 +52,6 @@
         body>section:nth-child(2){
             height: 30vh;
             width: 23vw;
-            background: white;
             position: absolute;
             top: 8vh;
             left: 1vw;
@@ -247,6 +246,10 @@
             }
         }
 
+        #imaDiv{
+            height: 100%;
+            width: 100%;
+        }
     </style>
 </head>
 <body>
@@ -254,9 +257,15 @@
         <h2>Dashboard...</h2>
         <button type="button" name="btnPlaceRent" id="btnPlaceRent">Place New Rent</button>
     </header>
-    <section></section>
-    <section></section>
-    <section></section>
+    <section>
+        <div id="imaDiv"></div>
+    </section>
+    <section>
+        <div></div>
+    </section>
+    <section>
+        <div></div>
+    </section>
     <section>
         <label>Customer ID :</label><br>
         <label id="lbl1"></label><br>
@@ -294,8 +303,15 @@
 </body>
 <script src="../../asserts/js/jquery-3.6.1.min.js"></script>
 <script>
+
+    loadImage(path);
+
     $('#btnPlaceRent').click(function (){
         $(location).attr('href',"PlaceRentForm.html");
     })
+
+    function loadImage(path){
+        $('#imaDiv').css("background","../../asserts/image/"+path);
+    }
 </script>
 </html>

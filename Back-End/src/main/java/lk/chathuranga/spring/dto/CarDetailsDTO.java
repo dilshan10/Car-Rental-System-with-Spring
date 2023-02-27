@@ -21,4 +21,5 @@ public class CarDetailsDTO {
     String transmissionType;
     String fuelType;
     String status;
+    String imgPath;
 }

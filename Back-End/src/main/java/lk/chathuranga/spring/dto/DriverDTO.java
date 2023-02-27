@@ -16,5 +16,6 @@ public class DriverDTO {
     private String driAddress;
     private String DLNumber;
     private String email;
+    private String imgPath;
     private boolean Availability;
 }

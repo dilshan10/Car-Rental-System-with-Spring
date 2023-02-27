@@ -25,4 +25,5 @@ public class CarDetails {
     String transmissionType;
     String fuelType;
     String status;
+    String imgPath;
 }
