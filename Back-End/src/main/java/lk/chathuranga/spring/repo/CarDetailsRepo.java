@@ -1,4 +1,7 @@
 package lk.chathuranga.spring.repo;
 
-public interface CarDetailsRepo {
+import lk.chathuranga.spring.entity.CarDetails;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface CarDetailsRepo extends JpaRepository<CarDetails,String > {
 }
