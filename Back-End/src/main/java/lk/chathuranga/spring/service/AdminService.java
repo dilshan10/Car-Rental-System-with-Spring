@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public interface AdminService {
     public void addAdmin(AdminDTO dto);
 
-    public void upDateAdmin(AdminDTO dto);
+    public void updateAdmin(AdminDTO dto);
 
     public void deleteAdmin(AdminDTO dto);
 
