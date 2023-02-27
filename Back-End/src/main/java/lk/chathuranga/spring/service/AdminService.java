@@ -9,7 +9,7 @@ public interface AdminService {
 
     public void updateAdmin(AdminDTO dto);
 
-    public void deleteAdmin(AdminDTO dto);
+    public void deleteAdmin(String id);
 
     public ArrayList<AdminDTO> loadAllAdmin();
 }
