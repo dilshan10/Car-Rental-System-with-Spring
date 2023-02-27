@@ -10,7 +10,7 @@ public interface CustomerService {
 
     public void updateCustomer(CustomerDTO dto);
 
-    public void deleteCustomer(CustomerDTO dto);
+    public void deleteCustomer(String id);
 
     public ArrayList<CustomerDTO> loadAllCustomer();
 }
