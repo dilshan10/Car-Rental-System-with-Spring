@@ -9,7 +9,7 @@ public interface CarDetailsService {
 
     public void updateCarDetails(CarDetailsDTO dto);
 
-    public void deleteCarDetails(CarDetailsDTO dto);
+    public void deleteCarDetails(String RegNumbe);
 
     public ArrayList<CarDetailsDTO> loadAllCarDetails();
 }
