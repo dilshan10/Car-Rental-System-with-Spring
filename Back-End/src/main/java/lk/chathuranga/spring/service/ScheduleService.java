@@ -9,7 +9,7 @@ public interface ScheduleService {
 
     public void updateSchedule(ScheduleDTO dto);
 
-    public void deleteSchedule(ScheduleDTO dto);
+    public void deleteSchedule(String id);
 
     public ArrayList<ScheduleDTO> loadAllSchedule();
 }

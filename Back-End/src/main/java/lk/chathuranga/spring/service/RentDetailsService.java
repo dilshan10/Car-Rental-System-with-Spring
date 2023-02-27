@@ -9,7 +9,7 @@ public interface RentDetailsService {
 
     public void updateRentDetails(RentDetailstDTO dto);
 
-    public void deleteRentDetails(RentDetailstDTO dto);
+    public void deleteRentDetails(String id);
 
     public ArrayList<RentDetailstDTO>loadAllRentDetails();
 }

@@ -42,8 +42,9 @@ public class DriveServiceImpl implements DriverService {
     @Override
     public void deleteDriver(String id) {
         if (!repo.existsById(id)){
-            throw new RuntimeException("Driver "+id+" Not Available to Update..!");
+            throw new RuntimeException("Driver "+id+" Not Available to Delete..!");
         }
+        repo.deleteById(id);
     }
 
     @Override

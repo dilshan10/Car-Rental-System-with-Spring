@@ -42,6 +42,7 @@ public class CustomerServiceImpl implements CustomerService {
         if (!repo.existsById(id)){
             throw new RuntimeException("Customer"+id+" Not Available to Delete..!");
         }
+        repo.deleteById(id);
     }
 
     @Override

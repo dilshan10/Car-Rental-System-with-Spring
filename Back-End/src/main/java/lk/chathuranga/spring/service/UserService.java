@@ -9,7 +9,7 @@ public interface UserService {
 
     public void updateUser(UserDTO dto);
 
-    public void deleteUser(UserDTO dto);
+    public void deleteUser(String id);
 
     public ArrayList<UserDTO> loadAllUser();
 }

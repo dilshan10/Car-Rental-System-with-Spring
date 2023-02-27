@@ -9,7 +9,7 @@ public interface PaymentService {
 
     public void updatePayment(PaymentDTO dto);
 
-    public void deletePayement(PaymentDTO dto);
+    public void deletePayement(String id);
 
     public ArrayList<PaymentDTO> loadAllPayment();
 }
