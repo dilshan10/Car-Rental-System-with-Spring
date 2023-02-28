@@ -373,7 +373,7 @@
         }
     }
 
-    let baseURL =
+    let baseURL = "http://localhost:8080/Back_End_war/";
 
     $('#btnNewCust').click(function (){
 
@@ -385,7 +385,7 @@
         if (pass == rePass){
             console.log(pass,rePass);
             $.ajax({
-                url:baseURL+"customerNew",
+                url:baseURL+"customerReg",
                 method:"post",
                 data:formData,
                 dataType:"json",

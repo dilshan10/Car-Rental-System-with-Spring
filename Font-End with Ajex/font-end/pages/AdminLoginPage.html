@@ -100,6 +100,10 @@
 </body>
 <script src="../../asserts/js/jquery-3.6.1.min.js"></script>
 <script>
+
+    let baseURL = "http://localhost:8080/Back_End_war/";
+    let AdminLogs = [];
+
     $('#adminUserName').focus();
 
     $('#adminUserName').keydown(function (evet){
@@ -113,6 +117,26 @@
             $('#btnAdminLogin').focus();
         }
     })
+
+    LoadAllAdmin();
+
+    function LoadAllAdmin(){
+        $.ajax({
+            url:baseURL+ "adminLog",
+            success:function (res){
+                for (let c of res.data){
+                    AdminLogs.push(c)
+                }
+                console.log(AdminLogs.field)
+            },
+            error:function (error){
+                let message = JSON.parse(error.responseText).message;
+                alert(message);
+            }
+        });
+        console.log("run")
+    }
+
 
     $('#btnAdminLogin').click(function (){
         var username = $('#adminUserName').val();
