@@ -13,5 +13,5 @@ import javax.persistence.NamedEntityGraph;
 public class ResponseUtil {
     String code;
     String message;
-    String data;
+    Object data;
 }
