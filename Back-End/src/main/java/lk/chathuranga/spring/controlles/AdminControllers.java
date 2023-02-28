@@ -35,7 +35,7 @@ public class AdminControllers {
     }
 
     @GetMapping
-    public ResponseUtil getAllAddmin(){
+    public ResponseUtil getAllAddmins(){
         ArrayList<AdminDTO> allAdmins = service.loadAllAdmin();
         return new ResponseUtil("200","Success",allAdmins);
     }
