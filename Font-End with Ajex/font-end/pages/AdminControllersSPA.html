@@ -880,45 +880,11 @@
                             <th>Customer Name</th>
                             <th>Customer Address</th>
                             <th>Customer Tell-Number</th>
+                            <th>Date Of Birth</th>
                             <th>Customer E-mail</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>C00-001</td>
-                            <td>Chathuranga Dilshan</td>
-                            <td>Beruwala</td>
-                            <td>0754313114</td>
-                            <td>superdilshan999@gmail.com</td>
-                        </tr>
-                        <tr>
-                            <td>C00-002</td>
-                            <td>Chathuranga Dilshan</td>
-                            <td>Beruwala</td>
-                            <td>0754313114</td>
-                            <td>superdilshan999@gmail.com</td>
-                        </tr>
-                        <tr>
-                            <td>C00-003</td>
-                            <td>Chathuranga Dilshan</td>
-                            <td>Beruwala</td>
-                            <td>0754313114</td>
-                            <td>superdilshan999@gmail.com</td>
-                        </tr>
-                        <tr>
-                            <td>C00-004</td>
-                            <td>Chathuranga Dilshan</td>
-                            <td>Beruwala</td>
-                            <td>0754313114</td>
-                            <td>superdilshan999@gmail.com</td>
-                        </tr>
-                        <tr>
-                            <td>C00-005</td>
-                            <td>Chathuranga Dilshan</td>
-                            <td>Beruwala</td>
-                            <td>0754313114</td>
-                            <td>superdilshan999@gmail.com</td>
-                        </tr>
+                    <tbody id="tblCustomer">
                     </tbody>
                 </table>
             </div>
@@ -950,7 +916,9 @@
                             <th>status</th>
                         </tr>
                     </thead>
-                    <tbody></tbody>
+                    <tbody id="tblCars">
+
+                    </tbody>
                 </table>
             </div>
         </section>
@@ -1269,6 +1237,42 @@
         $('#MainLbl').text("User Details");
     })
 
+    let baseURL = "http://localhost:8080/Back_End_war/";
+
+    loadAllCustomer();
+
+    function loadAllCustomer(){
+        $('#tblCustomer').empty();
+        $.ajax({
+            url:baseURL+"customer",
+            dataType: "json",
+            success: function (resp){
+                console.log(resp);
+                for (let cus of resp.data){
+                    var row = '<tr><td>'+cus.custID+'</td><td>'+cus.name+'</td><td>'+cus.address+'</td><td>'+cus.tellNum+'</td><td>'+cus.dob+'</td><td>'+cus.emailAddress+'</td></tr>';
+                    $('#tblCustomer').append(row);
+                }
+            },
+        })
+    }
+/*----------------------------------------------------------------------------------------------------------------------------*/
+
+    loadAllCars();
+
+    function loadAllCars(){
+        $('#tblCars').empty();
+        $.ajax({
+            url: baseURL+"car",
+            dataType: "json",
+            success:function (resp){
+                console.log(resp)
+                for (let car of resp.data){
+                    var row = '<tr><td>'+car.regNumber+'</td><td>'+car.brand+'</td><td>'+car.type+'</td><td>'+car.freeMileage+'</td><td>'+car.priceForExtraKm+'</td><td>'+car.color+'</td><td>'+car.numOfPass+'</td><td>'+car.transmissionType+'</td><td>'+car.fuelType+'</td><td>'+car.status+'</td></tr>';
+                    $('#tblCars').append(row);
+                }
+            }
+        })
+    }
 
 </script>
 </html>
