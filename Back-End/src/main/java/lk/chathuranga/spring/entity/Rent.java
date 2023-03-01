@@ -7,6 +7,7 @@ import lombok.ToString;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import java.math.BigDecimal;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -15,9 +16,9 @@ import javax.persistence.Id;
 @Entity
 public class Rent {
     @Id
-    String ReID;
-    String Date;
-    String Time;
-    Double LossDamegePayment;
-    Double duration;
+    private String ReID;
+    private String Date;
+    private String Time;
+    private BigDecimal LossDamegePayment;
+    private BigDecimal duration;
 }

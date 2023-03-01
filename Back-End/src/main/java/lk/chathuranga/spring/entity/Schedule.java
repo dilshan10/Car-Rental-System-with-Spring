@@ -16,7 +16,7 @@ import javax.persistence.Id;
 @Entity
 public class Schedule {
     @Id
-    String SID;
-    String Date;
-    String Time;
+    private String SID;
+    private String Date;
+    private String Time;
 }

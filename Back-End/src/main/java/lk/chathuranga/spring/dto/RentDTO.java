@@ -6,14 +6,16 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import java.math.BigDecimal;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 @ToString
 public class RentDTO {
-    String ReID;
-    String Date;
-    String Time;
-    Double LossDamagePayment;
-    Double duration;
+    private String ReID;
+    private String Date;
+    private String Time;
+    private BigDecimal LossDamagePayment;
+    private BigDecimal duration;
 }

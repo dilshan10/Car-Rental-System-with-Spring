@@ -7,6 +7,7 @@ import lombok.ToString;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import java.math.BigDecimal;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -15,15 +16,15 @@ import javax.persistence.Id;
 @Entity
 public class CarDetails {
     @Id
-    String regNumber;
-    String Brand;
-    String Type;
-    Double freeMileage;
-    Double priceForExtraKm;
-    String color;
-    int numOfPass;
-    String transmissionType;
-    String fuelType;
-    String status;
-    String imgPath;
+    private String regNumber;
+    private String Brand;
+    private String Type;
+    private BigDecimal freeMileage;
+    private BigDecimal priceForExtraKm;
+    private String color;
+    private int numOfPass;
+    private String transmissionType;
+    private String fuelType;
+    private String status;
+    private String imgPath;
 }

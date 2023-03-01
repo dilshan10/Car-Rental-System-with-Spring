@@ -11,15 +11,15 @@ import lombok.ToString;
 @Data
 @ToString
 public class CarDetailsDTO {
-    String regNumber;
-    String Brand;
-    String Type;
-    Double freeMileage;
-    Double priceForExtraKm;
-    String color;
-    int numOfPass;
-    String transmissionType;
-    String fuelType;
-    String status;
-    String imgPath;
+    private String regNumber;
+    private String Brand;
+    private String Type;
+    private Double freeMileage;
+    private Double priceForExtraKm;
+    private String color;
+    private int numOfPass;
+    private String transmissionType;
+    private String fuelType;
+    private String status;
+    private String imgPath;
 }

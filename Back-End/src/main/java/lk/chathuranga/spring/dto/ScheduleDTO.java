@@ -10,7 +10,7 @@ import lombok.ToString;
 @Data
 @ToString
 public class ScheduleDTO {
-    String SID;
-    String Date;
-    String Time;
+    private String SID;
+    private String Date;
+    private String Time;
 }

@@ -15,7 +15,7 @@ import javax.persistence.Id;
 @Entity
 public class RentDetails {
     @Id
-    String ReID;
-    String regNumber;
-    String SID;
+    private String ReID;
+    private String regNumber;
+    private String SID;
 }
