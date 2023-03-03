@@ -37,7 +37,7 @@ public class UserController {
     @GetMapping
     public ResponseUtil getAllUsers(){
         ArrayList<UserDTO> allUsers = service.loadAllUser();
-        return new ResponseUtil("200","Success..!",allUsers);
+        return new ResponseUtil("200","Success User..!",allUsers);
     }
 
 }

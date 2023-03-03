@@ -889,7 +889,14 @@
             margin: auto;
         }
 
+        #P2>div:nth-child(1)>form:nth-child(1)>label{
+            color: white;
+        }
 
+        #P2>div:nth-child(1)>form:nth-child(1)>input{
+            height: 4vh;
+            width: 20vw;
+        }
     </style>
 </head>
 <body>
@@ -939,23 +946,34 @@
         </section>
         <section id="P2">
             <diV>
-                <form>
-                    <label for="CustID"></label>
-                    <input id="CustID" name="CustID" type="text">
-                    <label for="CUstName"></label>
-                    <input id="CUstName" name="CustName" type="text">
-                    <label></label>
-                    <input>
-                    <label></label>
-                    <input>
-                    <label></label>
-                    <input>
+                <form id="CustomerForm">
+                    <label for="txtCustID">Customer ID</label>
+                    <input id="txtCustID" name="custID" type="text">
+
+                    <label for="txtCustName">Customer Name</label>
+                    <input id="txtCustName" name="name" type="text">
+
+                    <label for="txtcustAddress">Customer Address</label>
+                    <input type="text" id="txtcustAddress" name="address">
+
+                    <label for="txtcustDOB">Date Of Birth</label>
+                    <input type="date" id="txtcustDOB" name="DOB">
+
+                    <label for="txtcustTellNumber">Tell-Number</label>
+                    <input type="tel" id="txtcustTellNumber" name="tellNum">
+
+                    <label for="txtcustEmail">E-mail Address</label>
+                    <input type="email" id="txtcustEmail" name="emailAddress">
+
+                    <label for="txtcustNIC">NIC Image</label>
+                    <input type="file" id="txtcustNIC" name="imgPath">
+
                 </form>
             </diV>
             <div>
-                <button type="button">Save</button>
-                <button type="button">Update</button>
-                <button type="button">Delete</button>
+                <button type="button" id="btnAddCustomer">Save</button>
+                <button type="button" id="btnUpdateCustomer">Update</button>
+                <button type="button" id="btnDeleteCustomer">Delete</button>
             </div>
             <div>
                 <table>
@@ -1286,7 +1304,71 @@
         $('#MainLbl').text("User Details");
     })
 
+    /*---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
     let baseURL = "http://localhost:8080/Back_End_war/";
+
+    $('#btnAddCustomer').click(function (){
+
+        var formData = $('#CustomerForm').serialize();
+
+        $.ajax({
+            url:baseURL+"customer",
+            method :"post",
+            data: formData,
+            dataType: "json",
+            success:function(res){
+                alert(res.message);
+                loadAllCustomer();
+            },
+            error:function (error){
+                var jsObject = JSON.parse(error.responseText);
+                alert(jsObject.message)
+            }
+        })
+
+    });
+
+    $('#btnUpdateCustomer').click(function (){
+        let custID = $('#txtCustID').val();
+        let custName = $('#txtCustName').val();
+        let custAddress = $('#txtcustAddress').val();
+        let tellNum = $('#txtcustTellNumber').val();
+        let custDOB = $('#txtcustDOB').val();
+        let custEmail = $('#txtcustEmail').val();
+        let imgPath = $('#txtcustNIC').val();
+
+        var customer = {
+            custID : custID,
+            name : custName,
+            address : custAddress,
+            tellNmu : tellNum,
+            dob : custDOB,
+            emailAddress : custEmail,
+            imgPath : imgPath
+        }
+
+        $.ajax({
+            url: baseURL+'customer',
+            method: 'put',
+            contentType:"application/json",
+            data:JSON.stringify(customer),
+            dataType:"json",
+            success: function (res) {
+                alert(res.message);
+                loadAllCustomer();
+            },
+            error:function (error){
+                let cause= JSON.parse(error.responseText).message;
+                alert(cause);
+            }
+        })
+
+    });
+
+    $('#btnDeleteCustomer').click(function (){
+        alert("Delete..");
+    });
 
     loadAllCustomer();
 
@@ -1302,10 +1384,11 @@
                     var row = '<tr><td>'+cus.custID+'</td><td>'+cus.name+'</td><td>'+cus.address+'</td><td>'+cus.tellNum+'</td><td>'+cus.dob+'</td><td>'+cus.emailAddress+'</td></tr>';
                     $('#tblCustomer').append(row);
                 }
-            },
+            }
         })
     }
-/*----------------------------------------------------------------------------------------------------------------------------*/
+
+    /*------------------------------------------------------------------------------------------------------------------------------------*/
 
     loadAllCars();
 
@@ -1325,7 +1408,7 @@
         })
     }
 
-    /*------------------------------------------------------------------------------------------------------------------------------*/
+    /*------------------------------------------------------------------------------------------------------------------------------------*/
 
     loadAllRent();
 
@@ -1345,7 +1428,7 @@
         })
     }
 
-    /*------------------------------------------------------------------------------------------------------------------------------*/
+    /*------------------------------------------------------------------------------------------------------------------------------------*/
 
     loadAllRentDetaills();
 
@@ -1391,10 +1474,14 @@
     function loadAllPayment(){
         $('#tblPayment').empty();
         $.ajax({
-            url:baseURL+"",
+            url:baseURL+"payment",
             dataType: "json",
             success:function (resp){
-
+                console.log(resp)
+                for (let pay of resp.data){
+                    var row = '<tr><td>'+pay.payID+'</td><td>'+pay.date+'</td><td>'+pay.time+'</td><td>'+pay.value+'<</td></tr>';
+                    $('#tblPayment').append(row);
+                }
             }
 
         })
@@ -1407,10 +1494,14 @@
     function loadAllSchedule(){
         $('#tblSchedule').empty()
         $.ajax({
-            url:baseURL+"",
+            url:baseURL+"schedule",
             dataType: "json",
             success:function (resp){
-
+                console.log(resp)
+                for (let sche of resp.data){
+                    var row = '<tr><td>'+sche.sid+'</td><td>'+sche.date+'</td><td>'+sche.time+'</td></tr>'
+                    $('#tblSchedule').append(row)
+                }
             }
         })
 
@@ -1423,13 +1514,19 @@
     function loadAllUser(){
         $('#tblUser').empty();
         $.ajax({
-            url:baseURL+"",
+            url:baseURL+"user",
             dataType: "json",
             success:function (resp){
-
+                console.log(resp)
+                for (let u of resp.data){
+                    var row = '<tr><td>'+u.uid+'</td><td>'+u.userName+'</td><td>'+u.password+'</td></tr>';
+                    $('#tblUser').append(row);
+                }
             }
         })
     }
+
+    /*--------------------------------------------------------------------------------------------------------------------------------*/
 
 </script>
 </html>
