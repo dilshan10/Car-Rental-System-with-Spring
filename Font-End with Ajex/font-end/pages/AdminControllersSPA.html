@@ -230,7 +230,6 @@
         body>section:nth-child(2)>section:nth-child(2)>div:nth-child(2){
             height:10vh;
             width: 50vw;
-            border: 2px solid black;
             position: absolute;
             bottom: 47vh;
             left: 0;
@@ -889,14 +888,160 @@
             margin: auto;
         }
 
-        #P2>div:nth-child(1)>form:nth-child(1)>label{
+        #lblCustID{
+            height: fit-content;
+            width: fit-content;
+            position: absolute;
+            left: 2vw;
+            top: 3vh;
+            margin: auto;
             color: white;
         }
 
-        #P2>div:nth-child(1)>form:nth-child(1)>input{
+        #txtCustID{
+            height: 4vh;
+            width: 7vw;
+            position: absolute;
+            left: 2vw;
+            top: 5vh;
+            margin: auto;
+        }
+
+        #lblCustName{
+            height: fit-content;
+            width: fit-content;
+            position: absolute;
+            left: 37vw;
+            top: 3vh;
+            margin: auto;
+            color: black;
+        }
+
+        #txtCustName{
             height: 4vh;
             width: 20vw;
+            position: absolute;
+            left: 37vw;
+            top: 5vh;
+            margin: auto;
         }
+
+        #lblCustAddress{
+            height: fit-content;
+            width: fit-content;
+            position: absolute;
+            left: 62vw;
+            top: 3vh;
+            margin: auto;
+            color: black;
+        }
+
+        #txtcustAddress{
+            height: 4vh;
+            width: 25vw;
+            position: absolute;
+            left: 62vw;
+            top: 5vh;
+            margin: auto;
+        }
+
+        #lblCustDOB{
+            height: fit-content;
+            width: fit-content;
+            position: absolute;
+            left: 2vw;
+            top: 12vh;
+            margin: auto;
+            color: white;
+        }
+
+        #txtcustDOB{
+            height: 4vh;
+            width: 15vw;
+            position: absolute;
+            left: 2vw;
+            top: 14vh;
+            margin: auto;
+        }
+
+        #lblCustTell{
+            height: fit-content;
+            width: fit-content;
+            position: absolute;
+            left: 20vw;
+            top: 12vh;
+            margin: auto;
+            color: black;
+        }
+
+        #txtcustTellNumber{
+            height: 4vh;
+            width: 15vw;
+            position: absolute;
+            left: 20vw;
+            top: 14vh;
+            margin: auto;
+        }
+
+        #lblCustEmail{
+            height: fit-content;
+            width: fit-content;
+            position: absolute;
+            left: 38vw;
+            top: 12vh;
+            margin: auto;
+            color: black;
+        }
+
+        #txtcustEmail{
+            height: 4vh;
+            width: 15vw;
+            position: absolute;
+            left: 38vw;
+            top: 14vh;
+            margin: auto;
+        }
+
+        #lblCustNIC{
+            height: fit-content;
+            width: fit-content;
+            position: absolute;
+            left: 56vw;
+            top: 12vh;
+            margin: auto;
+            color: black;
+        }
+
+        #txtcustNIC{
+            height: 4vh;
+            width: 15vw;
+            position: absolute;
+            left: 56vw;
+            top: 14vh;
+            margin: auto;
+        }
+
+        #lblUserName{
+            height: fit-content;
+            width: fit-content;
+            position: absolute;
+            left: 12vw;
+            top: 3vh;
+            margin: auto;
+            color: black;
+        }
+
+        #txtUserName{
+            height: 4vh;
+            width: 20vw;
+            position: absolute;
+            left: 12vw;
+            top: 5vh;
+            margin: auto;
+        }
+
+        /*-----------------------------------------------------------------------------------------------------*/
+
     </style>
 </head>
 <body>
@@ -947,25 +1092,28 @@
         <section id="P2">
             <diV>
                 <form id="CustomerForm">
-                    <label for="txtCustID">Customer ID</label>
+                    <label for="txtCustID" id="lblCustID">Customer ID</label>
                     <input id="txtCustID" name="custID" type="text">
 
-                    <label for="txtCustName">Customer Name</label>
+                    <label for="txtUserName" id="lblUserName">User Name</label>
+                    <select id="txtUserName" name="UserName" type=""></select>
+
+                    <label for="txtCustName" id="lblCustName">Customer Name</label>
                     <input id="txtCustName" name="name" type="text">
 
-                    <label for="txtcustAddress">Customer Address</label>
+                    <label for="txtcustAddress" id="lblCustAddress">Customer Address</label>
                     <input type="text" id="txtcustAddress" name="address">
 
-                    <label for="txtcustDOB">Date Of Birth</label>
+                    <label for="txtcustDOB" id="lblCustDOB">Date Of Birth</label>
                     <input type="date" id="txtcustDOB" name="DOB">
 
-                    <label for="txtcustTellNumber">Tell-Number</label>
+                    <label for="txtcustTellNumber" id="lblCustTell">Tell-Number</label>
                     <input type="tel" id="txtcustTellNumber" name="tellNum">
 
-                    <label for="txtcustEmail">E-mail Address</label>
+                    <label for="txtcustEmail" id="lblCustEmail">E-mail Address</label>
                     <input type="email" id="txtcustEmail" name="emailAddress">
 
-                    <label for="txtcustNIC">NIC Image</label>
+                    <label for="txtcustNIC" id="lblCustNIC">NIC Image</label>
                     <input type="file" id="txtcustNIC" name="imgPath">
 
                 </form>
@@ -977,7 +1125,7 @@
             </div>
             <div>
                 <table>
-                    <thead>
+                    <thead style="background: #039417">
                         <tr>
                             <th>Customer ID</th>
                             <th>Customer Name</th>
@@ -987,7 +1135,7 @@
                             <th>Customer E-mail</th>
                         </tr>
                     </thead>
-                    <tbody id="tblCustomer">
+                    <tbody id="tblCustomer" style="background: #8cf58a">
                     </tbody>
                 </table>
             </div>
@@ -1306,6 +1454,10 @@
 
     /*---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
+    /**/
+
+    /*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
     let baseURL = "http://localhost:8080/Back_End_war/";
 
     $('#btnAddCustomer').click(function (){
@@ -1339,7 +1491,7 @@
         let imgPath = $('#txtcustNIC').val();
 
         var customer = {
-            custID : custID,
+            id : custID,
             name : custName,
             address : custAddress,
             tellNmu : tellNum,
@@ -1367,8 +1519,45 @@
     });
 
     $('#btnDeleteCustomer').click(function (){
-        alert("Delete..");
+        let id = $('#txtCustID').val();
+
+        $.ajax({
+            url : baseURL+"customer?id="+id+"",
+            method: "delete",
+            dataType: "json",
+            success: function (resp){
+                alert(resp.message);
+                loadAllCustomer();
+            },
+            error: function (error){
+                alert(JSON.parse(error.responseText).message);
+            }
+        });
+
     });
+
+    function bindRowClickEvents(){
+        $("#tblCustomer>tr").click(function (){
+            let id = $(this).children(":eq(0)").text();
+            let name = $(this).children(":eq(1)").text();
+            let address = $(this).children(":eq(2)").text();
+            let tellNum = $(this).children(":eq(3)").text();
+            let dob = $(this).children(":eq(4)").text();
+            let email = $(this).children(":eq(5)").text();
+
+            setTextFildValue(id,name,address,tellNum,dob,email);
+
+        });
+    };
+
+    function setTextFildValue(id,name,address,telNum,dob,email) {
+        $('#txtCustID').val(id);
+        $('#txtCustName').val(name);
+        $('#txtcustAddress').val(address);
+        $('#txtcustTellNumber').val(telNum);
+        $('#txtcustDOB').val(dob);
+        $('#txtcustEmail').val(email);
+    }
 
     loadAllCustomer();
 
@@ -1383,6 +1572,7 @@
                 for (let cus of resp.data){
                     var row = '<tr><td>'+cus.custID+'</td><td>'+cus.name+'</td><td>'+cus.address+'</td><td>'+cus.tellNum+'</td><td>'+cus.dob+'</td><td>'+cus.emailAddress+'</td></tr>';
                     $('#tblCustomer').append(row);
+                    bindRowClickEvents();
                 }
             }
         })

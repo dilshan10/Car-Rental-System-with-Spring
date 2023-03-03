@@ -23,4 +23,6 @@ public class Customer {
     private String tellNum;
     private String emailAddress;
     private String imgPath;
+
+    private String userID;
 }
