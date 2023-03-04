@@ -17,6 +17,6 @@ public class CustomerDTO {
     private String tellNum;
     private String emailAddress;
     private String imgPath;
-    private String userID;
+    private String password;
 }
 

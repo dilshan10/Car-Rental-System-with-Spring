@@ -911,7 +911,7 @@
             height: fit-content;
             width: fit-content;
             position: absolute;
-            left: 37vw;
+            left: 12vw;
             top: 3vh;
             margin: auto;
             color: black;
@@ -921,7 +921,7 @@
             height: 4vh;
             width: 20vw;
             position: absolute;
-            left: 37vw;
+            left: 12vw;
             top: 5vh;
             margin: auto;
         }
@@ -930,7 +930,7 @@
             height: fit-content;
             width: fit-content;
             position: absolute;
-            left: 62vw;
+            left: 36vw;
             top: 3vh;
             margin: auto;
             color: black;
@@ -938,9 +938,9 @@
 
         #txtcustAddress{
             height: 4vh;
-            width: 25vw;
+            width: 40vw;
             position: absolute;
-            left: 62vw;
+            left: 36vw;
             top: 5vh;
             margin: auto;
         }
@@ -1006,7 +1006,7 @@
             height: fit-content;
             width: fit-content;
             position: absolute;
-            left: 56vw;
+            left: 74vw;
             top: 12vh;
             margin: auto;
             color: black;
@@ -1016,30 +1016,29 @@
             height: 4vh;
             width: 15vw;
             position: absolute;
-            left: 56vw;
+            left: 74vw;
             top: 14vh;
             margin: auto;
         }
 
-        #lblUserName{
+        #lblPassword{
             height: fit-content;
             width: fit-content;
             position: absolute;
-            left: 12vw;
-            top: 3vh;
+            left: 56vw;
+            top: 12vh;
             margin: auto;
             color: black;
         }
 
-        #txtUserName{
+        #txtPassword{
             height: 4vh;
-            width: 20vw;
+            width: 15vw;
             position: absolute;
-            left: 12vw;
-            top: 5vh;
+            left: 56vw;
+            top: 14vh;
             margin: auto;
         }
-
         /*-----------------------------------------------------------------------------------------------------*/
 
     </style>
@@ -1056,7 +1055,6 @@
             <div id="B6">Driver Details</div>
             <div id="B7">Payments Details</div>
             <div id="B8">Schedule Details</div>
-            <div id="B9">User details<i class="bi bi-person-circle"></i></div>
         </div>
     </section>
     <section id="body">
@@ -1095,9 +1093,6 @@
                     <label for="txtCustID" id="lblCustID">Customer ID</label>
                     <input id="txtCustID" name="custID" type="text">
 
-                    <label for="txtUserName" id="lblUserName">User Name</label>
-                    <select id="txtUserName" name="UserName" type=""></select>
-
                     <label for="txtCustName" id="lblCustName">Customer Name</label>
                     <input id="txtCustName" name="name" type="text">
 
@@ -1112,6 +1107,9 @@
 
                     <label for="txtcustEmail" id="lblCustEmail">E-mail Address</label>
                     <input type="email" id="txtcustEmail" name="emailAddress">
+
+                    <label for="txtPassword" id="lblPassword">Password</label>
+                    <input id="txtPassword" name="password" type="text">
 
                     <label for="txtcustNIC" id="lblCustNIC">NIC Image</label>
                     <input type="file" id="txtcustNIC" name="imgPath">
@@ -1133,9 +1131,10 @@
                             <th>Customer Tell-Number</th>
                             <th>Date Of Birth</th>
                             <th>Customer E-mail</th>
+                            <th>Password</th>
                         </tr>
                     </thead>
-                    <tbody id="tblCustomer" style="background: #8cf58a">
+                    <tbody id="tblCustomer" style="background: #8cf58a ;color: black">
                     </tbody>
                 </table>
             </div>
@@ -1299,30 +1298,6 @@
                 </table>
             </div>
         </section>
-        <section id="P9">
-            <div>
-                <form>
-
-                </form>
-            </div>
-            <div>
-                <button>Save</button>
-                <button>Update</button>
-                <button>Delete</button>
-            </div>
-            <div>
-                <table>
-                    <thead>
-                    <tr>
-                        <th>User ID</th>
-                        <th>UserName</th>
-                        <th>Password</th>
-                    </tr>
-                    </thead>
-                    <tbody id="tblUser"></tbody>
-                </table>
-            </div>
-        </section>
     </section>
     <section id="footer">
 
@@ -1439,24 +1414,7 @@
         $('#MainLbl').text("Schedule Details");
     })
 
-    $('#B9').click(function (){
-        $('#P1').css("display", "none");
-        $("#P2").css("display", "none");
-        $("#P3").css("display", "none");
-        $("#P4").css("display", "none");
-        $("#P5").css("display", "none");
-        $("#P6").css("display", "none");
-        $("#P7").css("display", "none");
-        $("#P8").css("display", "none");
-        $("#P9").css("display", "block");
-        $('#MainLbl').text("User Details");
-    })
-
     /*---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-
-    /**/
-
-    /*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
     let baseURL = "http://localhost:8080/Back_End_war/";
 
@@ -1698,25 +1656,6 @@
     }
 
     /*------------------------------------------------------------------------------------------------------------------------------------*/
-
-    loadAllUser();
-
-    function loadAllUser(){
-        $('#tblUser').empty();
-        $.ajax({
-            url:baseURL+"user",
-            dataType: "json",
-            success:function (resp){
-                console.log(resp)
-                for (let u of resp.data){
-                    var row = '<tr><td>'+u.uid+'</td><td>'+u.userName+'</td><td>'+u.password+'</td></tr>';
-                    $('#tblUser').append(row);
-                }
-            }
-        })
-    }
-
-    /*--------------------------------------------------------------------------------------------------------------------------------*/
 
 </script>
 </html>

@@ -21,5 +21,6 @@ public class Driver {
     private String DLNumber;
     private String email;
     private String imgPath;
+    private String password;
     private boolean Availability;
 }

@@ -307,15 +307,15 @@
     CustomerVali.push({reg:custNameregEx,field:$('#custName'),error: 'Customer Name is not match to Valied Patten'});
     CustomerVali.push({reg:custAddresssregEx,field:$('#custAddress'),error:'Customer Id is not match to Valied Patten'});
     CustomerVali.push({reg:custTellregEx,field:$('#custTell'),error: 'Customer Name is not match to Valied Patten'});
-    CustomerVali.push({reg:custEmailregEx,field:$('#custEmail'),error:'Customer Id is not match to Valied Patten'});
+    //CustomerVali.push({reg:custEmailregEx,field:$('#custEmail'),error:'Customer Id is not match to Valied Patten'});
     CustomerVali.push({reg:custPasswordregEx,field:$('#custPass'),error: 'Customer Name is not match to Valied Patten'});
     CustomerVali.push({reg:custPasswordregEx,field:$('#custRePass'),error: 'Customer Name is not match to Valied Patten'});
 
-    $('#custID,#custName,#custAddress,#custTell,#custEmail,#custPass,#custRePass').on('keyup',function (){
+    $('#custID,#custName,#custAddress,#custTell,#custPass,#custRePass').on('keyup',function (){
         checkValied();
     })
 
-    $('#custID,#custName,#custAddress,#custTell,#custEmail,#custPass,#custRePass').on('blur',function (){
+    $('#custID,#custName,#custAddress,#custTell,#custPass,#custRePass').on('blur',function (){
         checkValied();
     })
 
@@ -377,7 +377,23 @@
 
     $('#btnNewCust').click(function (){
 
-        var formData = $('#NewCustomerForm').serialize()
+        let id = $('#custID').val();
+        let name = $('#custName').val();
+        let address = $('#custAddress').val();
+        let telNum = $('#custTell').val();
+        let email = $('#custEmail').val();
+        let imgPath = $('#IdImage').val();
+        let username = $('#custEmail').val();
+        let password = $('#custPass').val();
+
+        var customer = {
+            id : id,
+            name : name,
+            address : address,
+            telNum : telNum,
+            email : email,
+            imgpath : imgPath
+        }
 
         var pass = $('#custPass').val();
         var rePass = $('#custRePass').val();
@@ -385,9 +401,9 @@
         if (pass == rePass){
             console.log(pass,rePass);
             $.ajax({
-                url:baseURL+"customerReg",
+                url:baseURL+"customer",
                 method:"post",
-                data:formData,
+                data:JSON.stringify(customer),
                 dataType:"json",
                 success:function (res){
                     alert(res.message)
