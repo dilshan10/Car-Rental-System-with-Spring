@@ -1265,30 +1265,116 @@
             right: 2vw;
             top: 5vh;
             margin: auto;
-            border: 2px solid red;
         }
 
         /*-----------------------------------------------------------------------------------------------------------*/
 
-        #lblRentID{}
+        #lblRentID{
+            height: fit-content;
+            width: fit-content;
+            position: absolute;
+            left: 2vw;
+            top: 2vh;
+            margin: auto;
+            color: white;
+        }
 
-        #txtRentID{}
+        #txtRentID{
+            height: 4vh;
+            width: 7vw;
+            position: absolute;
+            left: 2vw;
+            top: 4vh;
+            margin: auto;
+        }
 
-        #lblRentDate{}
+        #lblRentDate{
+            height: fit-content;
+            width: fit-content;
+            position: absolute;
+            left: 12vw;
+            top: 2vh;
+            margin: auto;
+            color: white;
+        }
 
-        #txtRentDate{}
+        #txtRentDate{
+            height: 4vh;
+            width: 10vw;
+            position: absolute;
+            left: 12vw;
+            top: 4vh;
+            margin: auto;
+        }
 
-        #lblRentTime{}
+        #lblRentTime{
+            height: fit-content;
+            width: fit-content;
+            position: absolute;
+            left: 25vw;
+            top: 2vh;
+            margin: auto;
+            color: white;
+        }
 
-        #txtRentTime{}
+        #txtRentTime{
+            height: 4vh;
+            width: 10vw;
+            position: absolute;
+            left: 25vw;
+            top: 4vh;
+            margin: auto;
+        }
 
-        #lblRentLoss{}
+        #lblRentLoss{
+            height: fit-content;
+            width: fit-content;
+            position: absolute;
+            left: 38vw;
+            top: 2vh;
+            margin: auto;
+            color: white;
+        }
 
-        #txtRentLoss{}
+        #txtRentLoss{
+            height: 4vh;
+            width: 7vw;
+            position: absolute;
+            left: 38vw;
+            top: 4vh;
+            margin: auto;
+        }
 
-        #lblRentDuration{}
+        #lblRentDuration{
+            height: fit-content;
+            width: fit-content;
+            position: absolute;
+            left: 50vw;
+            top: 2vh;
+            margin: auto;
+            color: white;
+        }
 
-        #txtRentDuration{}
+        #txtRentDuration{
+            height: 4vh;
+            width: 10vw;
+            position: absolute;
+            left: 50vw;
+            top: 4vh;
+            margin: auto;
+        }
+
+        #imgViwer3{
+            height: 20vh;
+            width: 20vh;
+            position: absolute;
+            right: 2vw;
+            top: 5vh;
+            margin: auto;
+            border: 2px solid red;
+        }
+
+        /*--------------------------------------------------------------------------------------------------------------*/
 
     </style>
 </head>
@@ -1477,13 +1563,13 @@
         </section>
         <section id="P4">
             <div>
-                <form>
+                <form id="formRent">
 
                     <label for="txtRentID" id="lblRentID">Rent ID</label>
                     <input type="text" name="ReID" id="txtRentID">
 
                     <label for="txtRentDate" id="lblRentDate">Date</label>
-                    <input type="date" name="Data" id="txtRentDate">
+                    <input type="date" name="data" id="txtRentDate">
 
                     <label for="txtRentTime" id="lblRentTime">Time</label>
                     <input type="time" name="Time" id="txtRentTime">
@@ -1495,6 +1581,7 @@
                     <input type="text" name="duration" id="txtRentDuration">
 
                 </form>
+                <div id="imgViwer3"></div>
             </div>
             <div>
                 <button type="button" id="btnAddRent">Save</button>
@@ -1503,7 +1590,7 @@
             </div>
             <div>
                 <table>
-                    <thead>
+                    <thead style="background: #039417; color: white">
                     <tr>
                         <th>Rent ID</th>
                         <th>Date</th>
@@ -1512,75 +1599,126 @@
                         <th>duration</th>
                     </tr>
                     </thead>
-                    <tbody id="tblRent"></tbody>
+                    <tbody id="tblRent" style="background: #8cf58a; color: black"></tbody>
                 </table>
             </div>
         </section>
         <section id="P5">
             <div>
-                <form>
+                <form id="formRentDetails">
+
+                    <label for="txtRentID" id="lblDeRentID">Rent ID</label>
+                    <select name="ReID" id="txtDeRentID"></select>
+
+                    <label for="txtRegNum" id="lblDeRentDate">Car Register Number</label>
+                    <select name="regNumber" id="txtRegNum"></select>
+
+                    <label for="txtScheID" id="lblDeRentTime">Schedule ID</label>
+                    <select name="SID" id="txtScheID"></select>
 
                 </form>
             </div>
             <div>
-                <button>Save</button>
-                <button>Update</button>
-                <button>Delete</button>
+                <button type="button" id="btnAddRentDetails">Save</button>
+                <button type="button" id="btnUpdateRentDetails">Update</button>
+                <button type="button" id="btnDeleteRentDetails">Delete</button>
             </div>
             <div>
                 <table>
-                    <thead>
+                    <thead style="background: #039417; color: white">
                     <tr>
                         <th>Rent ID</th>
                         <th>Car Register Number</th>
                         <th>Schedule Id</th>
                     </tr>
                     </thead>
-                    <tbody id="tblRentDetails"></tbody>
+                    <tbody id="tblRentDetails" style="background: #8cf58a; color: black"></tbody>
                 </table>
             </div>
         </section>
         <section id="P6">
             <div>
-                <form>
+                <form id="formDriver">
+
+                    <label for="txtDriverID" id="lblDrivetID">Driver ID</label>
+                    <input type="text" name="driID" id="txtDriverID">
+
+                    <label for="txtDriName" id="lblDriName">Driver Name</label>
+                    <input type="text" name="driName" id="txtDriName">
+
+                    <label for="txtDriAddress" id="lblDriAddress">Driver Address</label>
+                    <input type="text" name="driAddress" id="txtDriAddress">
+
+                    <label for="txtDriLisNum" id="lblDriLisNum">Driver Lis Number</label>
+                    <input type="text" name="DLNumber" id="txtDriLisNum">
+
+                    <label for="txtEmail" id="lblEmail">E-mail</label>
+                    <input type="email" name="email" id="txtEmail">
+
+                    <label for="txtImgPath" id="lblImgPath">Image</label>
+                    <input type="file" name="imgPath" id="txtImgPath">
+
+                    <label for="txtPassword" id="lblDriPassword">Password</label>
+                    <input type="text" name="password" id="txtDriPassword">
+
+                    <label for="txtAvailability" id="lblAvailability">Availability</label>
+                    <select type="date" name="Data" id="txtAvailability">
+                        <option></option>
+                        <option>Available</option>
+                        <option>Non-Available</option>
+                    </select>
 
                 </form>
             </div>
             <div>
-                <button>Save</button>
-                <button>Update</button>
-                <button>Delete</button>
+                <button type="button" id="btnAddDriver">Save</button>
+                <button type="button" id="btnUpdateDriver">Update</button>
+                <button type="button" id="btnDeleteDriver">Delete</button>
             </div>
             <div>
                 <table>
-                    <thead>
+                    <thead style="background: #039417; color: white">
                     <tr>
                         <th>Driver Id</th>
                         <th>Name</th>
                         <th>Address</th>
                         <th> Lisation Number</th>
                         <th>E-mail</th>
+                        <th>Image</th>
+                        <th>Password</th>
                         <th>Availability</th>
                     </tr>
                     </thead>
-                    <tbody id="tblDriver"></tbody>
+                    <tbody id="tblDriver" style="background: #8cf58a; color: black"></tbody>
                 </table>
             </div>
         </section>
         <section id="P7">
             <div>
-                <form>
+                <form id="formPayment">
+
+                    <label for="txtPayID" id="lblPayID">Driver ID</label>
+                    <input type="text" name="payID" id="txtPayID">
+
+                    <label for="txtValue" id="lblValue">Driver Name</label>
+                    <input type="number" name="Value" id="txtValue">
+
+                    <label for="txtPayDate" id="lblPayData">Driver Address</label>
+                    <input type="date" name="date" id="txtPayDate">
+
+                    <label for="txtPayTime" id="lblPayTime">Driver Lis Number</label>
+                    <input type="time" name="DLNumber" id="txtPayTime">
 
                 </form>
             </div>
             <div>
-                <button>Save</button>
-                <button>Update</button>
-                <button>Delete</button>
+                <button type="button" id="btnAddPayment">Save</button>
+                <button type="button" id="btnUpdatePayment">Update</button>
+                <button type="button" id="btnDeletePayment">Delete</button>
             </div>
             <div>
                 <table>
-                    <thead>
+                    <thead style="background: #039417; color: white">
                     <tr>
                         <th>Payment ID</th>
                         <th>Date</th>
@@ -1588,31 +1726,40 @@
                         <th>Value</th>
                     </tr>
                     </thead>
-                    <tbody id="tblPayment"></tbody>
+                    <tbody id="tblPayment" style="background: #8cf58a; color: black"></tbody>
                 </table>
             </div>
         </section>
         <section id="P8">
             <div>
-                <form>
+                <form id="formSchedule">
+
+                    <label for="txtScID" id="lblScID">Driver ID</label>
+                    <input type="text" name="driID" id="txtScID">
+
+                    <label for="txtDate" id="lblDate">Driver Name</label>
+                    <input type="date" name="driName" id="txtDate">
+
+                    <label for="txtTime" id="lblTime">Driver Address</label>
+                    <input type="time" name="driAddress" id="txttime">
 
                 </form>
             </div>
             <div>
-                <button>Save</button>
-                <button>Update</button>
-                <button>Delete</button>
+                <button type="button" id="btnAddSchedule">Save</button>
+                <button type="button" id="btnUpdateSchedule">Update</button>
+                <button type="button" id="btnDeleteSchedule">Delete</button>
             </div>
             <div>
                 <table>
-                    <thead>
+                    <thead style="background: #039417; color: white">
                     <tr>
                         <th>Schedule ID</th>
                         <th>Date</th>
                         <th>Time</th>
                     </tr>
                     </thead>
-                    <tbody id="tblSchedule"></tbody>
+                    <tbody id="tblSchedule" style="background: #8cf58a; color: black"></tbody>
                 </table>
             </div>
         </section>
@@ -1968,6 +2115,34 @@
 
     /*------------------------------------------------------------------------------------------------------------------------------------*/
 
+    $('#btnAddRent').click(function (){
+        let formData2 = $('#formRent').serialize();
+
+        $.ajax({
+            url:baseURL+"rent",
+            method: "post",
+            data: formData2,
+            dataType : "json",
+            success:function (res){
+                alert(res.message);
+                loadAllRent();
+            },
+            error:function (error){
+                var jsObject = JSON.parse(error.responseText);
+                alert(jsObject.message)
+            }
+        })
+
+    })
+
+    $('#btnUpdateRent').click(function (){
+
+    })
+
+    $('#btnDeleteRent').click(function (){
+
+    })
+
     loadAllRent();
 
     function loadAllRent(){
@@ -1988,6 +2163,33 @@
 
     /*------------------------------------------------------------------------------------------------------------------------------------*/
 
+    $('#btnAddRentDetails').click(function (){
+        let formData3 = $('#formRentDetails').serialize();
+
+        $.ajax({
+            url:baseURL+"rentDetails",
+            method: "post",
+            data: formData3,
+            dataType : "json",
+            success:function (res){
+                alert(res.message);
+                loadAllRentDetaills();
+            },
+            error:function (error){
+                var jsObject = JSON.parse(error.responseText);
+                alert(jsObject.message)
+            }
+        })
+    })
+
+    $('#btnUpdateRentDetails').click(function (){
+
+    })
+
+    $('#btnDeleteRentDetails').click(function (){
+
+    })
+
     loadAllRentDetaills();
 
     function loadAllRentDetaills(){
@@ -2007,6 +2209,33 @@
 
     /*------------------------------------------------------------------------------------------------------------------------------------*/
 
+    $('#btnAddDriver').click(function (){
+        let formData4 = $('#formDriver').serialize();
+
+        $.ajax({
+            url:baseURL+"driver",
+            method: "post",
+            data: formData4,
+            dataType : "json",
+            success:function (res){
+                alert(res.message);
+                loadAllDrivers();
+            },
+            error:function (error){
+                var jsObject = JSON.parse(error.responseText);
+                alert(jsObject.message)
+            }
+        })
+    })
+
+    $('#btnUpdateDriver').click(function (){
+
+    })
+
+    $('#btnDeleteDriver').click(function (){
+
+    })
+
     loadAllDrivers();
 
     function loadAllDrivers(){
@@ -2018,7 +2247,7 @@
                 $('#DriverCount').text(resp.data.length);
                 console.log(resp)
                 for (let dri of resp.data){
-                    var row = '<tr><td>'+dri.driID+'</td><td>'+dri.driName+'</td><td>'+dri.Address+'</td><td>'+dri.dlnNumber+'</td><td>'+dri.email+'</td><td>'+dri.availability+'</td></tr>'
+                    var row = '<tr><td>'+dri.driID+'</td><td>'+dri.driName+'</td><td>'+dri.driAddress+'</td><td>'+dri.dlnumber+'</td><td>'+dri.email+'</td><td>'+dri.imgPath+'</td><td>'+dri.password+'</td><td>'+dri.availability+'</td></tr>'
                     $('#tblDriver').append(row);
                 }
             }
@@ -2026,6 +2255,33 @@
     }
 
     /*------------------------------------------------------------------------------------------------------------------------------------*/
+
+    $('#btnAddPayment').click(function (){
+        let formData5 = $('#formPayment').serialize();
+
+        $.ajax({
+            url:baseURL+"payment",
+            method: "post",
+            data: formData5,
+            dataType : "json",
+            success:function (res){
+                alert(res.message);
+                loadAllPayment();
+            },
+            error:function (error){
+                var jsObject = JSON.parse(error.responseText);
+                alert(jsObject.message)
+            }
+        })
+    })
+
+    $('').click(function (){
+
+    })
+
+    $('').click(function (){
+
+    })
 
     loadAllPayment();
 
@@ -2046,6 +2302,33 @@
     }
 
     /*------------------------------------------------------------------------------------------------------------------------------------*/
+
+    $('#btnAddSchedule').click(function (){
+        let formData6 = $('#formSchedule').serialize();
+
+        $.ajax({
+            url:baseURL+"schedule",
+            method: "post",
+            data: formData6,
+            dataType : "json",
+            success:function (res){
+                alert(res.message);
+                loadAllSchedule();
+            },
+            error:function (error){
+                var jsObject = JSON.parse(error.responseText);
+                alert(jsObject.message)
+            }
+        })
+    })
+
+    $('').click(function (){
+
+    })
+
+    $('').click(function (){
+
+    })
 
     loadAllSchedule();
 
