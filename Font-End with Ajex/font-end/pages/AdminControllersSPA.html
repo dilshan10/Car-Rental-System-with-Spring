@@ -1569,7 +1569,7 @@
                     <input type="text" name="ReID" id="txtRentID">
 
                     <label for="txtRentDate" id="lblRentDate">Date</label>
-                    <input type="date" name="Data" id="txtRentDate">
+                    <input type="date" name="Date" id="txtRentDate">
 
                     <label for="txtRentTime" id="lblRentTime">Time</label>
                     <input type="time" name="Time" id="txtRentTime">
@@ -2116,7 +2116,10 @@
     /*------------------------------------------------------------------------------------------------------------------------------------*/
 
     $('#btnAddRent').click(function (){
+
         let formData2 = $('#formRent').serialize();
+
+        console.log(formData2);
 
         $.ajax({
             url:baseURL+"rent",
@@ -2158,6 +2161,29 @@
 
     })
 
+    function bindRowClickEvents2(){
+        $('#tblRent>tr').click(function () {
+
+            let reid = $(this).children(":eq(0)").text();
+            let date = $(this).children(":eq(1)").text();
+            let time = $(this).children(":eq(2)").text();
+            let lossDpay = $(this).children(":eq(3)").text();
+            let duration = $(this).children(":eq(4)").text();
+
+            setTextFildValue2( reid,date,time,lossDpay,duration);
+
+        })
+    }
+
+    function setTextFildValue2(reid,date,time,lossDpay,duration){
+        $('').val(reid)
+        $('').val(date)
+        $('').val(time)
+        $('').val(duration)
+        $('').css("background","url(../../asserts/image/"+lossDpay+")")
+        $('').css("background-size","cover")
+    }
+
     loadAllRent();
 
     function loadAllRent(){
@@ -2171,6 +2197,7 @@
                 for (let ren of resp.data) {
                     var row = '<tr><td>'+ren.reID+'</td><td>'+ren.date+'</td><td>'+ren.time+'</td><td>'+ren.lossDamagePayment+'</td><td>'+ren.duration+'</td></tr>';
                     $('#tblRent').append(row);
+                    bindRowClickEvents2()
                 }
             }
         })
@@ -2179,6 +2206,7 @@
     /*------------------------------------------------------------------------------------------------------------------------------------*/
 
     $('#btnAddRentDetails').click(function (){
+
         let formData3 = $('#formRentDetails').serialize();
 
         $.ajax({
@@ -2219,6 +2247,24 @@
 
     })
 
+    function bindRowClickEvents3(){
+        $('#tblRentDetails>tr').click(function (){
+
+            let reid = $(this).children(":eq(0)").text();
+            let crnumber = $(this).children(":eq(1)").text();
+            let sid = $(this).children(":eq(2)").text();
+
+            setTextFildValue3(reid,crnumber,sid)
+
+        })
+    }
+
+    function setTextFildValue3(reid,crnumber,sid){
+        $('').val(reid)
+        $('').val(crnumber)
+        $('').val(sid)
+    }
+
     loadAllRentDetaills();
 
     function loadAllRentDetaills(){
@@ -2231,6 +2277,7 @@
                 for (let reDe of resp.data){
                     var row = '<tr><td>'+reDe.reID+'</td><td>'+reDe.regNumber+'</td><td>'+reDe.sid+'</td></tr>';
                     $('#tblRentDetails').append(row);
+                    bindRowClickEvents3()
                 }
             }
         })
@@ -2282,6 +2329,34 @@
 
     })
 
+    function bindRowClickEvents4(){
+        $('#tblDriver>tr').click(function (){
+            let id = $(this).children(":eq(0)").text();
+            let name = $(this).children(":eq(1)").text();
+            let address = $(this).children(":eq(2)").text();
+            let dlnumber = $(this).children(":eq(3)").text();
+            let email = $(this).children(":eq(4)").text();
+            let img = $(this).children(":eq(5)").text();
+            let password = $(this).children(":eq(6)").text();
+            let availability = $(this).children(":eq(7)").text();
+
+            setTextFildValue4(id,name,address,dlnumber,email,img,password,availability);
+
+        })
+    }
+
+    function setTextFildValue4(id,name,address,dlnumber,email,img,password,availability){
+        $('').val(id)
+        $('').val(name)
+        $('').val(address)
+        $('').val(dlnumber)
+        $('').val(email)
+        $('').val(password)
+        $('').val(availability)
+        $('').css("background","url(../../asserts/image/"+img+")")
+        $('').css("background-size","cover")
+    }
+
     loadAllDrivers();
 
     function loadAllDrivers(){
@@ -2295,6 +2370,7 @@
                 for (let dri of resp.data){
                     var row = '<tr><td>'+dri.driID+'</td><td>'+dri.driName+'</td><td>'+dri.driAddress+'</td><td>'+dri.dlnumber+'</td><td>'+dri.email+'</td><td>'+dri.imgPath+'</td><td>'+dri.password+'</td><td>'+dri.availability+'</td></tr>'
                     $('#tblDriver').append(row);
+                    bindRowClickEvents4()
                 }
             }
         })
@@ -2344,6 +2420,25 @@
 
     })
 
+    function bindRowClickEvents5(){
+        $('#tblPayment>tr').click(function () {
+            let id = $(this).children(":eq(0)").text();
+            let value = $(this).children(":eq(1)").text();
+            let date = $(this).children(":eq(2)").text();
+            let time = $(this).children(":eq(3)").text();
+
+            setTextFildValue5(id,value,date,time);
+
+        })
+    }
+
+    function setTextFildValue5(id,value,date,time){
+        $('').val(id)
+        $('').val(value)
+        $('').val(date)
+        $('').val(time)
+    }
+
     loadAllPayment();
 
     function loadAllPayment(){
@@ -2356,6 +2451,7 @@
                 for (let pay of resp.data){
                     var row = '<tr><td>'+pay.payID+'</td><td>'+pay.date+'</td><td>'+pay.time+'</td><td>'+pay.value+'</td></tr>';
                     $('#tblPayment').append(row);
+                    bindRowClickEvents5()
                 }
             }
 
@@ -2406,6 +2502,23 @@
 
     })
 
+    function bindRowClickEvents6(){
+        $('#tblSchedule>tr').click(function (){
+            let sid = $(this).children(":eq(0)").text();
+            let date = $(this).children(":eq(1)").text();
+            let time = $(this).children(":eq(2)").text();
+
+            setTextFildValue6(sid,date,time);
+
+        })
+    }
+
+    function setTextFildValue6(sid,date,time){
+        $('').val(sid)
+        $('').val(date)
+        $('').val(time)
+    }
+
     loadAllSchedule();
 
     function loadAllSchedule(){
@@ -2418,6 +2531,7 @@
                 for (let sche of resp.data){
                     var row = '<tr><td>'+sche.sid+'</td><td>'+sche.date+'</td><td>'+sche.time+'</td></tr>'
                     $('#tblSchedule').append(row)
+                    bindRowClickEvents6()
                 }
             }
         })
