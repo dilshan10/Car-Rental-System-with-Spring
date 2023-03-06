@@ -1374,6 +1374,16 @@
             border: 2px solid red;
         }
 
+        #imgViwer4{
+            height: 20vh;
+            width: 20vh;
+            position: absolute;
+            right: 2vw;
+            top: 5vh;
+            margin: auto;
+            border: 2px solid red;
+        }
+
         /*--------------------------------------------------------------------------------------------------------------*/
 
     </style>
@@ -1610,11 +1620,11 @@
                     <label for="txtRentID" id="lblDeRentID">Rent ID</label>
                     <select name="ReID" id="txtDeRentID"></select>
 
-                    <label for="txtRegNum" id="lblDeRentDate">Car Register Number</label>
-                    <select name="regNumber" id="txtRegNum"></select>
+                    <label for="txtDeRegNum" id="lblDeRentDate">Car Register Number</label>
+                    <select name="regNumber" id="txtDeRegNum"></select>
 
-                    <label for="txtScheID" id="lblDeRentTime">Schedule ID</label>
-                    <select name="SID" id="txtScheID"></select>
+                    <label for="txtDeScheID" id="lblDeRentTime">Schedule ID</label>
+                    <select name="SID" id="txtDeScheID"></select>
 
                 </form>
             </div>
@@ -1669,6 +1679,7 @@
                     </select>
 
                 </form>
+                <div id="imgViwer4"></div>
             </div>
             <div>
                 <button type="button" id="btnAddDriver">Save</button>
@@ -1741,7 +1752,7 @@
                     <input type="date" name="Date" id="txtDate">
 
                     <label for="txtTime" id="lblTime">Time</label>
-                    <input type="time" name="Time" id="txttime">
+                    <input type="time" name="Time" id="txtTime">
 
                 </form>
             </div>
@@ -2032,8 +2043,6 @@
                 alert(jsObject.message)
             }
         })
-
-
     })
 
     $('#btnUpdateCar').click(function (){
@@ -2176,12 +2185,12 @@
     }
 
     function setTextFildValue2(reid,date,time,lossDpay,duration){
-        $('').val(reid)
-        $('').val(date)
-        $('').val(time)
-        $('').val(duration)
-        $('').css("background","url(../../asserts/image/"+lossDpay+")")
-        $('').css("background-size","cover")
+        $('#txtRentID').val(reid);
+        $('#txtRentDate').val(date);
+        $('#txtRentTime').val(time);
+        $('#txtRentDuration').val(duration);
+        $('#imgViwer3').css("background","url(../../asserts/image/"+lossDpay+")");
+        $('#imgViwer3').css("background-size","cover");
     }
 
     loadAllRent();
@@ -2260,9 +2269,9 @@
     }
 
     function setTextFildValue3(reid,crnumber,sid){
-        $('').val(reid)
-        $('').val(crnumber)
-        $('').val(sid)
+        $('#txtDeRentID').val(reid)
+        $('#txtDeRegNum').val(crnumber)
+        $('#txtDeScheID').val(sid)
     }
 
     loadAllRentDetaills();
@@ -2346,15 +2355,15 @@
     }
 
     function setTextFildValue4(id,name,address,dlnumber,email,img,password,availability){
-        $('').val(id)
-        $('').val(name)
-        $('').val(address)
-        $('').val(dlnumber)
-        $('').val(email)
-        $('').val(password)
-        $('').val(availability)
-        $('').css("background","url(../../asserts/image/"+img+")")
-        $('').css("background-size","cover")
+        $('#txtDriverID').val(id)
+        $('#txtDriName').val(name)
+        $('#txtDriAddress').val(address)
+        $('#txtDriLisNum').val(dlnumber)
+        $('#txtEmail').val(email)
+        $('#txtDriPassword').val(password)
+        $('#txtAvailability').val(availability)
+        $('#imgViwer4').css("background","url(../../asserts/image/"+img+")")
+        $('#imgViwer4').css("background-size","cover")
     }
 
     loadAllDrivers();
@@ -2433,10 +2442,10 @@
     }
 
     function setTextFildValue5(id,value,date,time){
-        $('').val(id)
-        $('').val(value)
-        $('').val(date)
-        $('').val(time)
+        $('#txtPayID').val(id)
+        $('#txtValue').val(value)
+        $('#txtPayDate').val(date)
+        $('#txtPayTime').val(time)
     }
 
     loadAllPayment();
@@ -2514,9 +2523,9 @@
     }
 
     function setTextFildValue6(sid,date,time){
-        $('').val(sid)
-        $('').val(date)
-        $('').val(time)
+        $('#txtScID').val(sid)
+        $('#txtDate').val(date)
+        $('#txtTime').val(time)
     }
 
     loadAllSchedule();

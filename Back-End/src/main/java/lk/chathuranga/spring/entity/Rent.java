@@ -19,6 +19,6 @@ public class Rent {
     private String ReID;
     private String Date;
     private String Time;
-    private BigDecimal LossDamegePayment;
+    private String LossDamegePayment;
     private BigDecimal duration;
 }
