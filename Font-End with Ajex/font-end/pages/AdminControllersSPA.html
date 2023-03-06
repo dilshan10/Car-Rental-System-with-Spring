@@ -1569,7 +1569,7 @@
                     <input type="text" name="ReID" id="txtRentID">
 
                     <label for="txtRentDate" id="lblRentDate">Date</label>
-                    <input type="date" name="data" id="txtRentDate">
+                    <input type="date" name="Data" id="txtRentDate">
 
                     <label for="txtRentTime" id="lblRentTime">Time</label>
                     <input type="time" name="Time" id="txtRentTime">
@@ -1662,7 +1662,7 @@
                     <input type="text" name="password" id="txtDriPassword">
 
                     <label for="txtAvailability" id="lblAvailability">Availability</label>
-                    <select type="date" name="Data" id="txtAvailability">
+                    <select name="Availability" id="txtAvailability">
                         <option></option>
                         <option>Available</option>
                         <option>Non-Available</option>
@@ -1697,17 +1697,17 @@
             <div>
                 <form id="formPayment">
 
-                    <label for="txtPayID" id="lblPayID">Driver ID</label>
+                    <label for="txtPayID" id="lblPayID">Payment ID</label>
                     <input type="text" name="payID" id="txtPayID">
 
-                    <label for="txtValue" id="lblValue">Driver Name</label>
+                    <label for="txtValue" id="lblValue">Payment Value</label>
                     <input type="number" name="Value" id="txtValue">
 
-                    <label for="txtPayDate" id="lblPayData">Driver Address</label>
+                    <label for="txtPayDate" id="lblPayData">Payment Date</label>
                     <input type="date" name="date" id="txtPayDate">
 
-                    <label for="txtPayTime" id="lblPayTime">Driver Lis Number</label>
-                    <input type="time" name="DLNumber" id="txtPayTime">
+                    <label for="txtPayTime" id="lblPayTime">Payment Time</label>
+                    <input type="time" name="time" id="txtPayTime">
 
                 </form>
             </div>
@@ -1734,14 +1734,14 @@
             <div>
                 <form id="formSchedule">
 
-                    <label for="txtScID" id="lblScID">Driver ID</label>
-                    <input type="text" name="driID" id="txtScID">
+                    <label for="txtScID" id="lblScID">Schedule ID</label>
+                    <input type="text" name="SID" id="txtScID">
 
-                    <label for="txtDate" id="lblDate">Driver Name</label>
-                    <input type="date" name="driName" id="txtDate">
+                    <label for="txtDate" id="lblDate">Date</label>
+                    <input type="date" name="Date" id="txtDate">
 
-                    <label for="txtTime" id="lblTime">Driver Address</label>
-                    <input type="time" name="driAddress" id="txttime">
+                    <label for="txtTime" id="lblTime">Time</label>
+                    <input type="time" name="Time" id="txttime">
 
                 </form>
             </div>
@@ -2141,6 +2141,21 @@
 
     $('#btnDeleteRent').click(function (){
 
+        let id1 = $('#txtRentID').val();
+
+        $.ajax({
+            url:baseURL+"rent?id="+id1+"",
+            method: "delete",
+            dataType: "json",
+            success:function (resp){
+                alert(resp.message);
+                loadAllRent();
+            },
+            error: function (error){
+                alert(JSON.parse(error.responseText).message);
+            }
+        })
+
     })
 
     loadAllRent();
@@ -2187,6 +2202,20 @@
     })
 
     $('#btnDeleteRentDetails').click(function (){
+        let id2 = $('#txtDeRentID').val();
+
+        $.ajax({
+            url:baseURL+"rentDetails?id="+id2+"",
+            method: "delete",
+            dataType: "json",
+            success:function (resp){
+                alert(resp.message);
+                loadAllRentDetaills();
+            },
+            error: function (error){
+                alert(JSON.parse(error.responseText).message);
+            }
+        })
 
     })
 
@@ -2234,6 +2263,23 @@
 
     $('#btnDeleteDriver').click(function (){
 
+        let id3 = $('#txtDriverID').val()
+
+        console.log(id3);
+
+        $.ajax({
+            url:baseURL+"driver?id="+id3+"",
+            method: "delete",
+            dataType: "json",
+            success:function (resp){
+                alert(resp.message);
+                loadAllDrivers();
+            },
+            error: function (error){
+                alert(JSON.parse(error.responseText).message);
+            }
+        })
+
     })
 
     loadAllDrivers();
@@ -2257,6 +2303,7 @@
     /*------------------------------------------------------------------------------------------------------------------------------------*/
 
     $('#btnAddPayment').click(function (){
+
         let formData5 = $('#formPayment').serialize();
 
         $.ajax({
@@ -2275,11 +2322,25 @@
         })
     })
 
-    $('').click(function (){
+    $('#btnUpdatePayment').click(function (){
 
     })
 
-    $('').click(function (){
+    $('#btnDeletePayment ').click(function (){
+        let id4 = $('#txtPayID').val();
+
+        $.ajax({
+            url:baseURL+"payment?id="+id4+"",
+            method: "delete",
+            dataType: "json",
+            success:function (resp){
+                alert(resp.message);
+                loadAllPayment();
+            },
+            error: function (error){
+                alert(JSON.parse(error.responseText).message);
+            }
+        })
 
     })
 
@@ -2293,7 +2354,7 @@
             success:function (resp){
                 console.log(resp)
                 for (let pay of resp.data){
-                    var row = '<tr><td>'+pay.payID+'</td><td>'+pay.date+'</td><td>'+pay.time+'</td><td>'+pay.value+'<</td></tr>';
+                    var row = '<tr><td>'+pay.payID+'</td><td>'+pay.date+'</td><td>'+pay.time+'</td><td>'+pay.value+'</td></tr>';
                     $('#tblPayment').append(row);
                 }
             }
@@ -2322,11 +2383,26 @@
         })
     })
 
-    $('').click(function (){
+    $('#btnUpdateSchedule').click(function (){
 
     })
 
-    $('').click(function (){
+    $('#btnDeleteSchedule').click(function (){
+
+        let id5 = $('#txtScID').val();
+
+        $.ajax({
+            url:baseURL+"schedule?id="+id5+"",
+            method: "delete",
+            dataType: "json",
+            success:function (resp){
+                alert(resp.message);
+                loadAllSchedule();
+            },
+            error: function (error){
+                alert(JSON.parse(error.responseText).message);
+            }
+        })
 
     })
 
