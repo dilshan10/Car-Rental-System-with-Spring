@@ -2432,9 +2432,9 @@
     function bindRowClickEvents5(){
         $('#tblPayment>tr').click(function () {
             let id = $(this).children(":eq(0)").text();
-            let value = $(this).children(":eq(1)").text();
-            let date = $(this).children(":eq(2)").text();
-            let time = $(this).children(":eq(3)").text();
+            let value = $(this).children(":eq(3)").text();
+            let date = $(this).children(":eq(1)").text();
+            let time = $(this).children(":eq(2)").text();
 
             setTextFildValue5(id,value,date,time);
 
