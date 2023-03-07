@@ -107,7 +107,7 @@
             margin: auto;
         }
 
-        #lblCustTell{
+        #lblCustDOB{
             position: absolute;
             height: fit-content;
             width: fit-content;
@@ -118,17 +118,17 @@
             color: white;
         }
 
-        #custTell{
+        #custDOB{
             position: absolute;
             height: fit-content;
-            width: fit-content;
+            width: 30%;
             left: 0;
             right: 0;
             top: 27vh;
             margin: auto;
         }
 
-        #lblCUstEmail{
+        #lblCustTell{
             position: absolute;
             height: fit-content;
             width: fit-content;
@@ -139,17 +139,17 @@
             color: white;
         }
 
-        #custEmail{
+        #custTell{
             position: absolute;
             height: fit-content;
-            width: 50%;
+            width: fit-content;
             left: 0;
             right: 0;
             top: 34vh;
             margin: auto;
         }
 
-        #lblIdImage{
+        #lblCUstEmail{
             position: absolute;
             height: fit-content;
             width: fit-content;
@@ -160,18 +160,17 @@
             color: white;
         }
 
-        #IdImage{
+        #custEmail{
             position: absolute;
             height: fit-content;
-            width: fit-content;
+            width: 50%;
             left: 0;
             right: 0;
             top: 41vh;
             margin: auto;
-            color: white;
         }
 
-        #lblCustPass{
+        #lblIdImage{
             position: absolute;
             height: fit-content;
             width: fit-content;
@@ -182,7 +181,7 @@
             color: white;
         }
 
-        #custPass{
+        #IdImage{
             position: absolute;
             height: fit-content;
             width: fit-content;
@@ -190,9 +189,10 @@
             right: 0;
             top: 48vh;
             margin: auto;
+            color: white;
         }
 
-        #lblRePass{
+        #lblCustPass{
             position: absolute;
             height: fit-content;
             width: fit-content;
@@ -203,7 +203,7 @@
             color: white;
         }
 
-        #custRePass{
+        #custPass{
             position: absolute;
             height: fit-content;
             width: fit-content;
@@ -213,13 +213,34 @@
             margin: auto;
         }
 
+        #lblRePass{
+            position: absolute;
+            height: fit-content;
+            width: fit-content;
+            left: 0;
+            right: 0;
+            top: 59vh;
+            margin: auto;
+            color: white;
+        }
+
+        #custRePass{
+            position: absolute;
+            height: fit-content;
+            width: fit-content;
+            left: 0;
+            right: 0;
+            top: 62vh;
+            margin: auto;
+        }
+
         #btnNewCust{
             position: absolute;
             height: fit-content;
             width: fit-content;
             left: 0;
             right: 0;
-            top: 63vh;
+            top: 67vh;
             margin: auto;
         }
 
@@ -267,20 +288,31 @@
             <form id="NewCustomerForm">
                 <label id="lblID" for="custID">Customer ID</label><br>
                 <input type="text" name="custID" id="custID"><br>
+
                 <label for="custName" id="lblCustName">Customer Name</label><br>
-                <input type="text" name="custName" id="custName"><br>
+                <input type="text" name="name" id="custName"><br>
+
                 <label for="custAddress" id="lblCustAddress">Customer Address</label><br>
-                <input type="text" name="custAddress" id="custAddress"><br>
+                <input type="text" name="address" id="custAddress"><br>
+
+                <label for="custAddress" id="lblCustDOB">Date Of Birth</label><br>
+                <input type="date" name="DOB" id="custDOB"><br>
+
                 <label for="custTell" id="lblCustTell">Customer TellNumber</label><br>
-                <input type="text" name="custTell" id="custTell"><br>
+                <input type="text" name="tellNum" id="custTell"><br>
+
                 <label for="custEmail" id="lblCUstEmail">Customer e-mail</label><br>
-                <input type="email" name="custEmail" id="custEmail"><br>
+                <input type="email" name="emailAddress" id="custEmail"><br>
+
                 <label for="IdImage" id="lblIdImage">ID image</label>
-                <input type="file" id="IdImage" name="IdImage">
+                <input type="file" id="IdImage" name="imgPath">
+
                 <label for="custPass" id="lblCustPass">Password</label><br>
-                <input type="password" name="custPass" id="custPass"><br>
+                <input type="password" name="password" id="custPass"><br>
+
                 <label for="custRePass" id="lblRePass">Re-Enter Password</label><br>
                 <input type="password" name="custRePass" id="custRePass"><br>
+
                 <button type="button" id="btnNewCust">Create new Login</button>
             </form>
         </section>
@@ -377,45 +409,22 @@
 
     $('#btnNewCust').click(function (){
 
-        let id = $('#custID').val();
-        let name = $('#custName').val();
-        let address = $('#custAddress').val();
-        let telNum = $('#custTell').val();
-        let email = $('#custEmail').val();
-        let imgPath = $('#IdImage').val();
-        let username = $('#custEmail').val();
-        let password = $('#custPass').val();
+        let formData = $('#NewCustomerForm').serialize();
 
-        var customer = {
-            id : id,
-            name : name,
-            address : address,
-            telNum : telNum,
-            email : email,
-            imgpath : imgPath
-        }
+        $.ajax({
+            url:baseURL+"customer",
+            method :"post",
+            data: formData,
+            dataType: "json",
+            success:function(res){
+                alert(res.message);
+            },
+            error:function (error){
+                var jsObject = JSON.parse(error.responseText);
+                alert(jsObject.message)
+            }
+        })
 
-        var pass = $('#custPass').val();
-        var rePass = $('#custRePass').val();
-
-        if (pass == rePass){
-            console.log(pass,rePass);
-            $.ajax({
-                url:baseURL+"customer",
-                method:"post",
-                data:JSON.stringify(customer),
-                dataType:"json",
-                success:function (res){
-                    alert(res.message)
-                },
-                error:function (error){
-                    alert(error.message)
-                }
-            })
-        }else{
-            console.log(pass,rePass);
-            alert("plz Check password again..")
-        }
     })
 </script>
 </html>
