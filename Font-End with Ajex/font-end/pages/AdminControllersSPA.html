@@ -1489,6 +1489,7 @@
         <section id="P3">
             <div>
                 <form id="formCar">
+
                     <label for="txtCarID" id="lblCarID">Registered Number</label>
                     <input type="text" name="regNumber" id="txtCarID">
 
@@ -1925,22 +1926,26 @@
         let custDOB = $('#txtcustDOB').val();
         let custEmail = $('#txtcustEmail').val();
         let imgPath = $('#txtcustNIC').val();
+        let pass = $('#txtPassword').val();
 
         var customer = {
-            id : custID,
+            custID : custID,
             name : custName,
             address : custAddress,
+            DOB : custDOB,
             tellNmu : tellNum,
-            dob : custDOB,
             emailAddress : custEmail,
-            imgPath : imgPath
+            imgPath : imgPath,
+            password : pass
         }
 
+        console.log(customer)
+
         $.ajax({
-            url: baseURL+'customer',
-            method: 'put',
+            url: baseURL+"customer",
+            method: "put",
             contentType:"application/json",
-            data:JSON.stringify(customer),
+            data: JSON.stringify(customer),
             dataType:"json",
             success: function (res) {
                 alert(res.message);
@@ -2046,7 +2051,48 @@
     })
 
     $('#btnUpdateCar').click(function (){
-        alert("update")
+        let regNumber = $('#txtCarID').val();
+        let brand = $('#txtCarBrand').val();
+        let type = $('#txtCarType').val();
+        let freeMil = $('#txtFreeMileage').val();
+        let priceExtra = $('#txtPriceExtra').val();
+        let color = $('#txtColor').val();
+        let numOfPass = $('#txtNumOfPass').val();
+        let transmissionType = $('#txtTranType').val();
+        let fuelType = $('#txtFuelType').val();
+        let status = $('#txtStatus').val();
+        let imgpath = $('txtImage').val();
+
+        var car = {
+            regNumber : regNumber,
+            Brand : brand,
+            Type : type,
+            freeMileage : freeMil,
+            priceForExtraKm : priceExtra,
+            color : color,
+            numOfPass : numOfPass,
+            transmissionType : transmissionType,
+            fuelType : fuelType,
+            status : status,
+            imgPath : imgpath
+        }
+
+        $.ajax({
+            url: baseURL+"car",
+            method: "put",
+            contentType:"application/json",
+            data:JSON.stringify(car),
+            dataType:"json",
+            success: function (res) {
+                alert(res.message);
+                loadAllCars();
+            },
+            error:function (error){
+                let cause= JSON.parse(error.responseText).message;
+                alert(cause);
+            }
+        })
+
     })
 
     $('#btnDeleteCar').click(function (){
@@ -2116,6 +2162,7 @@
                 for (let car of resp.data){
                     var row = '<tr><td>'+car.regNumber+'</td><td>'+car.brand+'</td><td>'+car.type+'</td><td>'+car.freeMileage+'</td><td>'+car.priceForExtraKm+'</td><td>'+car.color+'</td><td>'+car.numOfPass+'</td><td>'+car.transmissionType+'</td><td>'+car.fuelType+'</td><td>'+car.status+'</td><td>'+car.imgPath+'</td></tr>';
                     $('#tblCars').append(row);
+                    $('#txtDeRegNum').append(`<option value="${car.regNumber}">${car.regNumber}</option>`)
                     bindRowClickEvents1();
                 }
             }
@@ -2148,6 +2195,37 @@
     })
 
     $('#btnUpdateRent').click(function (){
+
+        let reid = $('#txtRentID').val();
+        let date = $('#txtRentDate').val();
+        let time = $('#txtRentTime').val();
+        let lossdamegePay = $('#txtRentLoss').val();
+        let duration = $('#txtRentDuration').val();
+
+        var rent = {
+            ReID : reid,
+            Date : date,
+            Time :time,
+            LossDamegePayment : lossdamegePay,
+            duration :duration
+        }
+
+        $.ajax({
+            url: baseURL+'rent',
+            method: 'put',
+            contentType:"application/json",
+            data:JSON.stringify(rent),
+            dataType:"json",
+            success: function (res) {
+                alert(res.message);
+                loadAllRent();
+            },
+            error:function (error){
+                let cause= JSON.parse(error.responseText).message;
+                alert(cause);
+            }
+
+        });
 
     })
 
@@ -2206,6 +2284,7 @@
                 for (let ren of resp.data) {
                     var row = '<tr><td>'+ren.reID+'</td><td>'+ren.date+'</td><td>'+ren.time+'</td><td>'+ren.lossDamagePayment+'</td><td>'+ren.duration+'</td></tr>';
                     $('#tblRent').append(row);
+                    $('#txtDeRentID').append(`<option value="${ren.reID}">${ren.reID}</option>`)
                     bindRowClickEvents2()
                 }
             }
@@ -2235,6 +2314,33 @@
     })
 
     $('#btnUpdateRentDetails').click(function (){
+
+        let reId = $('#').val();
+        let regnumber = $('#').val();
+        let sid =$('#').val();
+
+        var rentDetails = {
+            ReID : reId,
+            regNumber: regnumber,
+            SID : sid
+        }
+
+        $.ajax({
+            url: baseURL+'rentDetails',
+            method: 'put',
+            contentType:"application/json",
+            data:JSON.stringify(rentDetails),
+            dataType:"json",
+            success: function (res) {
+                alert(res.message);
+                loadAllRentDetaills();
+            },
+            error:function (error){
+                let cause= JSON.parse(error.responseText).message;
+                alert(cause);
+            }
+
+        });
 
     })
 
@@ -2314,6 +2420,43 @@
     })
 
     $('#btnUpdateDriver').click(function (){
+
+        let driid = $('#txtDriverID').val();
+        let driname = $('#txtDriName').val();
+        let driaddress = $('#txtDriAddress').val();
+        let dlnumber = $('#txtDriLisNum').val();
+        let email = $('#txtEmail').val();
+        let imgpath = $('#txtImgPath').val();
+        let password = $('#txtDriPassword').val();
+        let availability = $('#txtAvailability').val();
+
+        var driver = {
+            driID :driid,
+            driName : driname,
+            driAddress : driaddress,
+            DLnumber : dlnumber,
+            email : email,
+            imgPath : imgpath,
+            password : password,
+            Availability : availability
+        }
+
+        $.ajax({
+            url: baseURL+'driver',
+            method: 'put',
+            contentType:"application/json",
+            data:JSON.stringify(driver),
+            dataType:"json",
+            success: function (res) {
+                alert(res.message);
+                loadAllDrivers();
+            },
+            error:function (error){
+                let cause= JSON.parse(error.responseText).message;
+                alert(cause);
+            }
+
+        });
 
     })
 
@@ -2409,6 +2552,35 @@
 
     $('#btnUpdatePayment').click(function (){
 
+        let payid = $('#txtPayID').val();
+        let value = $('#txtValue').val();
+        let date = $('#txtPayDate').val();
+        let time = $('#txtPayTime').val();
+
+        var payment = {
+            PayID : payid,
+            Value : value,
+            date : date,
+            time :time
+        }
+
+        $.ajax({
+            url: baseURL+'payment',
+            method: 'put',
+            contentType:"application/json",
+            data:JSON.stringify(payment),
+            dataType:"json",
+            success: function (res) {
+                alert(res.message);
+                loadAllPayment();
+            },
+            error:function (error){
+                let cause= JSON.parse(error.responseText).message;
+                alert(cause);
+            }
+
+        });
+
     })
 
     $('#btnDeletePayment ').click(function (){
@@ -2490,6 +2662,33 @@
 
     $('#btnUpdateSchedule').click(function (){
 
+        let sid = $('').val();
+        let date = $('').val();
+        let time = $('').val();
+
+        var schedule = {
+            SID: sid,
+            Date: date,
+            Time: time
+        }
+
+        $.ajax({
+            url: baseURL+'schedule',
+            method: 'put',
+            contentType:"application/json",
+            data:JSON.stringify(schedule),
+            dataType:"json",
+            success: function (res) {
+                alert(res.message);
+                loadAllSchedule();
+            },
+            error:function (error){
+                let cause= JSON.parse(error.responseText).message;
+                alert(cause);
+            }
+
+        });
+
     })
 
     $('#btnDeleteSchedule').click(function (){
@@ -2540,6 +2739,7 @@
                 for (let sche of resp.data){
                     var row = '<tr><td>'+sche.sid+'</td><td>'+sche.date+'</td><td>'+sche.time+'</td></tr>'
                     $('#tblSchedule').append(row)
+                    $('#txtDeScheID').append(`<option value="${sche.sid}">${sche.sid}</option>`)
                     bindRowClickEvents6()
                 }
             }

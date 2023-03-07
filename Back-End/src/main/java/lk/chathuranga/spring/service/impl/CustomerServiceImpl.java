@@ -33,6 +33,7 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public void updateCustomer(CustomerDTO dto) {
         if (!repo.existsById(dto.getCustID())){
+            System.out.println(dto.getCustID());
             throw new RuntimeException("Customer "+dto.getCustID()+" Not Available to Update..!");
         }
     }

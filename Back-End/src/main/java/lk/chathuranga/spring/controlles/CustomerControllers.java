@@ -20,7 +20,7 @@ public class CustomerControllers {
     @PostMapping
     public ResponseUtil saveCustomer(CustomerDTO dto){
         service.addCustomer(dto);
-        return new ResponseUtil("200","Success..!",null);
+        return new ResponseUtil("200","Save Success..!",null);
     }
 
     @PutMapping
