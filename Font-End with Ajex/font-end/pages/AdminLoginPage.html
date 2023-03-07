@@ -102,7 +102,6 @@
 <script>
 
     let baseURL = "http://localhost:8080/Back_End_war/";
-    let AdminLogs = [];
 
     $('#adminUserName').focus();
 
@@ -118,34 +117,36 @@
         }
     })
 
-    LoadAllAdmin();
 
-    function LoadAllAdmin(){
-        $.ajax({
-            url:baseURL+ "adminLog",
-            success:function (res){
-                for (let c of res.data){
-                    AdminLogs.push(c)
-                }
-                console.log(AdminLogs.field)
-            },
-            error:function (error){
-                let message = JSON.parse(error.responseText).message;
-                alert(message);
-            }
-        });
-        console.log("run")
-    }
-
-
-    $('#btnAdminLogin').click(function (){
+    $('#btnAdminLogin').click(function () {
         var username = $('#adminUserName').val();
         var password = $('#adminPassword').val();
-        if (username == "root" && password == "1234"){
-            $(location).attr('href',"AdminControllersSPA.html")
-        }else {
-            alert("Plz check username and password..!")
-        }
+
+        $.ajax({
+            url:baseURL+"admin",
+            dataType: "json",
+            success: function (resp){
+                console.log(resp)
+                for (let adm of resp.data){
+                    if (adm.userName == username){
+
+                        let takeuser = adm.userName;
+                        let takepass = adm.password;
+
+                        console.log(takeuser,takepass)
+
+                        if (takeuser == username && takepass == password){
+                            $(location).attr('href',"AdminControllersSPA.html")
+                        }else {
+                            alert("Plz check username and password..!")
+                        }
+                    }else {
+                        alert("Plz check username and password..!")
+                    }
+                }
+            }
+        })
     })
+
 </script>
 </html>

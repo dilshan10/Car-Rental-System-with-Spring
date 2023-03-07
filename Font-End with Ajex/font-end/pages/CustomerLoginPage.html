@@ -110,17 +110,40 @@
         }
     })
 
+
+
+    let baseURL = "http://localhost:8080/Back_End_war/";
+
     $('#btnCustomerLogin').click(function (){
         var username = $('#userName').val();
         var password = $('#Password').val();
-        if (username == "root" && password == "1234"){
-            $(location).attr('href',"CustomerBashBoard.html")
-        }else {
-            alert("Plz check username and password..!")
-        }
-    })
 
-    let urlPaten = "";
+        $.ajax({
+            url:baseURL+"customer",
+            dataType: "json",
+            success: function (resp){
+                console.log(resp);
+                for (let cus of resp.data){
+                    if (cus.emailAddress == username) {
+
+                        let takeuser = cus.emailAddress;
+                        let takepass = cus.password;
+
+                        console.log(takeuser, takepass)
+
+                        if (takeuser == username && takepass == password) {
+                            $(location).attr('href', "CustomerBashBoard.html")
+                        } else {
+                            alert("Plz check username and password..!")
+                        }
+                    }else {
+                        alert("Plz check username and password..!")
+                    }
+                }
+            }
+        })
+
+    })
 
 </script>
 </html>

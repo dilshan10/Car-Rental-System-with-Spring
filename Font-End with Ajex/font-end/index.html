@@ -5,11 +5,13 @@
     <title>Loging Selection</title>
     <link rel="stylesheet" href="../asserts/CSS/normalize.css">
     <style>
+
         body{
             height: 100vh;
             width: 99vw;
             background: #494646;
         }
+
         body>section:nth-child(1)>label:nth-child(1){
             height: fit-content;
             width: fit-content;
@@ -21,6 +23,7 @@
             top: 13vh;
             margin: auto;
         }
+
         body>section:nth-child(1)>img:nth-child(2){
             position: absolute;
             margin: auto;
@@ -30,6 +33,7 @@
             width: 30vh;
             height: fit-content;
         }
+
         body>section>form>select:nth-child(1){
             height: 4vh;
             width: 30vh;
@@ -40,6 +44,7 @@
             left: 0;
             right: 0;
         }
+
         body>section>form>button:nth-child(2){
             height: 4vh;
             width: 15vh;
@@ -49,10 +54,12 @@
             left: 0;
             margin: auto;
         }
+
         body>section>form>button:nth-child(2):hover{
             color: white;
             background: blue;
         }
+
     </style>
 </head>
 <body>
@@ -69,12 +76,10 @@
             <button type="button" id="btn1"><B><i>To Login..</i></B></button>
         </form>
     </section>
-    <section>
-
-    </section>
 </body>
 <script src="../asserts/js/jquery-3.6.1.min.js"></script>
 <script>
+
     $('#btn1').click(function (){
         var Option = $('#loginOptions').val();
 
@@ -93,8 +98,10 @@
                 break;
         }
     })
+
     $('#loginOptions').keydown(function (event){
         $('#btn1').focus();
     })
+
 </script>
 </html>

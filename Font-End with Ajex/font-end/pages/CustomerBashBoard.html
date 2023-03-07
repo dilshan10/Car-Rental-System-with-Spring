@@ -96,54 +96,61 @@
 
         body>section:nth-child(5)>label:nth-child(1){
             left: 2vw;
+            top: 0;
         }
         body>section:nth-child(5)>label:nth-child(3){
             right: 0;
-            left: 0;
+            top: 2vh;
             font-style: italic;
             color: red;
         }
 
         body>section:nth-child(5)>label:nth-child(5){
             left: 2vw;
+            top: 5vh;
         }
 
         body>section:nth-child(5)>label:nth-child(7){
             right: 0;
-            left: 0;
+            top: 8vh;
             font-style: italic;
             color: red;
         }
 
         body>section:nth-child(5)>label:nth-child(9){
             left: 2vw;
+            top: 11vh;
         }
 
         body>section:nth-child(5)>label:nth-child(11){
             right: 0;
-            left: 0;
+            top: 14vh;
             font-style: italic;
             color: red;
         }
 
         body>section:nth-child(5)>label:nth-child(13){
             left: 2vw;
+            top: 20vh;
         }
 
         body>section:nth-child(5)>label:nth-child(15){
             right: 0;
-            left: 0;
+            top: 24vh;
             font-style: italic;
             color: red;
         }
 
         body>section:nth-child(5)>label:nth-child(17){
             left: 2vw;
+            top: 27vh;
         }
 
         body>section:nth-child(5)>label:nth-child(19){
+            position: absolute;
             right: 0;
-            left: 0;
+            top: 30vh;
+            margin: auto;
             font-style: italic;
             color: red;
         }
@@ -294,8 +301,8 @@
                     <th >Rent ID</th><th>Date</th><th>Time</th><th>Loss Damage Payment</th><th>Duration</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr><td></td></tr>
+            <tbody id="tblCustomer">
+
             </tbody>
         </table>
     </section>
@@ -304,14 +311,39 @@
 <script src="../../asserts/js/jquery-3.6.1.min.js"></script>
 <script>
 
-    loadImage(path);
+    let baseURL = "http://localhost:8080/Back_End_war/";
 
     $('#btnPlaceRent').click(function (){
         $(location).attr('href',"PlaceRentForm.html");
     })
 
     function loadImage(path){
-        $('#imaDiv').css("background","../../asserts/image/"+path);
+        console.log(path)
+        $('#imaDiv').css("background","url(../../asserts/image/"+path+")");
+        $('#imaDiv').css("background-size","cover")
     }
+
+    loadCustomers();
+
+    function loadCustomers(){
+        $.ajax({
+            url:baseURL+"customer",
+            dataType: "json",
+            success: function (resp){
+                $('#CustomerCount').text(resp.data.length)
+                for (let cus of resp.data){
+                    if (cus.custID == "C00-001"){
+                        $('#lbl1').text(cus.custID);
+                        $('#lbl2').text(cus.name);
+                        $('#lbl3').text(cus.address);
+                        $('#lbl4').text(cus.tellNum);
+                        $('#lbl5').text(cus.emailAddress)
+                        loadImage(cus.imgPath);
+                    }
+                }
+            }
+        })
+    }
+
 </script>
 </html>

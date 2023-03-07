@@ -106,14 +106,36 @@
 </body>
 <script src="../../asserts/js/jquery-3.6.1.min.js"></script>
 <script>
+
+    let baseURL = "http://localhost:8080/Back_End_war/";
+
     $('#btnDriverLogin').click(function (){
         var username = $('#username').val();
         var password =  $('#password').val();
-        if (username=="root" && password=="1234"){
-            $(location).attr('href',"DriverDashBoard.html")
-        }else {
-            alert("Plz check username and password..!")
-        }
+
+        $.ajax({
+            url: baseURL + "driver",
+            dataType: "json",
+            success: function (resp) {
+                $('#DriverCount').text(resp.data.length);
+                console.log(resp)
+                for (let dri of resp.data) {
+                    if (dri.email == username) {
+
+                        let takeusername = dri.email;
+                        let takepassword = dri.password;
+
+                        if (takeusername == username && takepassword == password) {
+                            $(location).attr('href', "DriverDashBoard.html")
+                        } else {
+                            alert("Plz check username and password..!")
+                        }
+                    }else{
+                        alert("Plz check username and password..!")
+                    }
+                }
+            }
+        })
     })
 </script>
 </html>

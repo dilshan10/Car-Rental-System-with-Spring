@@ -5,14 +5,93 @@
     <title>Gest User Page</title>
     <link rel="stylesheet" href="../../asserts/CSS/normalize.css">
     <style>
+        body{
+            height: 100vh;
+            width: 100vw;
+            position: relative;
+        }
+
+        body>div:nth-child(1){
+            height: 10vh;
+            width: 100vw;
+            background: black;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+
+        #btnSingIn{
+            height: 5vh;
+            width: 10vh;
+            border: 2px solid white;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 2vw;
+            margin: auto;
+            background: red;
+        }
+
+        #btnLogin{
+            height: 5vh;
+            width: 10vh;
+            border: 2px solid white;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 8vw;
+            margin: auto;
+            background: red;
+        }
+
+        body>div:nth-child(1)>div>label{
+            height: fit-content;
+            width: fit-content;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            margin: auto;
+            color: white;
+        }
+
+        #lblName{
+            height: fit-content;
+            width: fit-content;
+            font-size : 5vh;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 2vw;
+            margin: auto;
+            color: white;
+        }
 
     </style>
 </head>
 <body>
+    <div>
+        <label id="lblName">Car Rent System</label>
+        <div id="btnLogin"><label>LOG IN</label></div>
+        <div id="btnSingIn"><label>SING UP</label></div>
+    </div>
+    <div>
 
+    </div>
 </body>
 <script src="../../asserts/js/jquery-3.6.1.min.js"></script>
 <script>
+
+    $('#btnLogin').click(function (){
+        $(location).attr('href',"CustomerLoginPage.html")
+    })
+
+    $('#btnSingIn').click(function (){
+        $(location).attr('href',"CustomerRegistrationsPage.html")
+    })
 
 </script>
 </html>
