@@ -11,6 +11,7 @@ import lombok.ToString;
 @ToString
 public class ScheduleDTO {
     private String SID;
+    private String driID;
     private String Date;
     private String Time;
 }

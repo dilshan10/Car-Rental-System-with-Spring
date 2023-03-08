@@ -7,7 +7,10 @@ import lombok.ToString;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -27,4 +30,7 @@ public class CarDetails {
     private String fuelType;
     private String status;
     private String imgPath;
+
+    @OneToMany(mappedBy = "carDetails")
+    private List<RentDetails> rentDetail = new ArrayList<>();
 }

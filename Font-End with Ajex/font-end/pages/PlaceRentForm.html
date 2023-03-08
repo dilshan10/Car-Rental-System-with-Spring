@@ -43,12 +43,12 @@
             height: 20vh;
             width: 50vw;
             position: absolute;
-            top: 0;
+            top: 5vh;
             left: 0;
             margin: auto;
         }
         body>section:nth-child(1)>div:nth-child(2)>div:nth-child(2){
-            height: 20vh;
+            height: 28vh;
             width: 50vw;
             position: absolute;
             left: 0;
@@ -64,7 +64,6 @@
             bottom: 0;
             right: 0;
             margin: auto;
-            border: 2px solid purple;
         }
 
         body>section:nth-child(1)>div:nth-child(2)>div:nth-child(3)>div:nth-child(1){
@@ -150,6 +149,7 @@
             top: 5vh;
             left: 43vh;
             margin: auto;
+            color: white;
         }
 
         #lblAddress{
@@ -168,6 +168,7 @@
             top: 9vh;
             left: 18vh;
             margin: auto;
+            color: white;
         }
 
         #lblDateOfBrith{
@@ -186,6 +187,7 @@
             top: 13vh;
             left: 14vh;
             margin: auto;
+            color: white;
         }
 
         #lblTellNumber{
@@ -204,6 +206,7 @@
             top: 13vh;
             left: 47vh;
             margin: auto;
+            color: white;
         }
 
         #lblEmail{
@@ -222,6 +225,151 @@
             top: 13vh;
             left: 78vh;
             margin: auto;
+            color: white;
+        }
+/*---------------------------------------------------------------------------------------*/
+        #lblDriID{
+            height: fit-content;
+            width: fit-content;
+            position: absolute;
+            top: 5vh;
+            left: 2vh;
+            margin: auto;
+        }
+
+        #txtSelectDriId{
+            height: fit-content;
+            width: 7vw;
+            position: absolute;
+            top: 5vh;
+            left: 12vh;
+            margin: auto;
+        }
+
+        #lbldriName{
+            height: fit-content;
+            width: fit-content;
+            position: absolute;
+            top: 5vh;
+            left: 30vh;
+            margin: auto;
+        }
+
+        #txtdriName{
+            height: fit-content;
+            width: fit-content;
+            position: absolute;
+            top: 5vh;
+            left: 42vh;
+            margin: auto;
+            color: white;
+        }
+
+        #lbldriAddress{
+            height: fit-content;
+            width: fit-content;
+            position: absolute;
+            top: 9vh;
+            left: 2vh;
+            margin: auto;
+        }
+
+        #txtdriAddress{
+            height: fit-content;
+            width: fit-content;
+            position: absolute;
+            top: 9vh;
+            left: 16vh;
+            margin: auto;
+            color: white;
+        }
+
+        #lbldriDLNum{
+            height: fit-content;
+            width: fit-content;
+            position: absolute;
+            top: 12vh;
+            left: 2vh;
+            margin: auto;
+        }
+
+        #txtdriDLNum{
+            height: fit-content;
+            width: fit-content;
+            position: absolute;
+            top: 12vh;
+            left: 24vh;
+            margin: auto;
+            color: white;
+        }
+
+        #lbldriEmail{
+            height: fit-content;
+            width: fit-content;
+            position: absolute;
+            top: 12vh;
+            left: 40vh;
+            margin: auto;
+        }
+
+        #txtdriEmail{
+            height: fit-content;
+            width: fit-content;
+            position: absolute;
+            top: 12vh;
+            left: 52vh;
+            margin: auto;
+            color: white;
+        }
+
+        #lbldriAva{
+            height: fit-content;
+            width: fit-content;
+            position: absolute;
+            top: 12vh;
+            left: 80vh;
+            margin: auto;
+        }
+
+        #txtdriAva{
+            height: fit-content;
+            width: fit-content;
+            position: absolute;
+            top: 12vh;
+            left: 91vh;
+            margin: auto;
+            color: white;
+        }
+
+        .set1{
+            height: 5vh;
+            width: 50vw;
+            position: absolute;
+            margin: auto;
+        }
+
+        #divset1{
+            background: black;
+            top: 7vh;
+            left: 0;
+        }
+
+        #divset2{
+            background: black;
+            top: 31vh;
+            left: 0;
+        }
+
+        #divset3{
+            background: black;
+            top: 7vh;
+            right: 0;
+        }
+
+        #divset4{
+            background: black;
+            top: 31vh;
+            right: 0;
         }
 
     </style>
@@ -235,7 +383,7 @@
             <div>
                 <form>
 
-                    <label id="lbltext1">please select customer ID</label>
+                    <label id="lbltext1">please select your customer ID</label>
 
                     <label id="lblCustID">Customer ID</label>
                     <select id="txtSelectCustID"></select>
@@ -262,23 +410,23 @@
 
                     <label>selete a Driver if you want..</label>
 
+                    <label id="lblDriID">Driver ID :</label>
                     <select id="txtSelectDriId"></select>
 
-                    <label></label>
+                    <label id="lbldriName">Driver Name :</label>
+                    <label id="txtdriName"></label>
 
-                    <label></label>
+                    <label id="lbldriAddress">Driver Address :</label>
+                    <label id="txtdriAddress"></label>
 
-                    <label></label>
+                    <label id="lbldriDLNum">Driving Licence Number :</label>
+                    <label id="txtdriDLNum"></label>
 
-                    <label></label>
+                    <label id="lbldriEmail">Driver Email :</label>
+                    <label id="txtdriEmail"></label>
 
-                    <label></label>
-
-                    <label></label>
-
-                    <label></label>
-
-                    <label></label>
+                    <label id="lbldriAva">Availability :</label>
+                    <label id="txtdriAva"></label>
 
                 </form>
             </div>
@@ -286,21 +434,20 @@
                 <div>
                     <form>
 
-                        <label></label>
+                        <label>Rent ID :</label>
+                        <input type="text" name="reID">
 
-                        <label></label>
+                        <label>Date :</label>
+                        <input type="date" name="date">
 
-                        <label></label>
+                        <label>Time :</label>
+                        <input type="time" name="time">
 
-                        <label></label>
+                        <label>Duration :</label>
+                        <input type="number" name="duration">
 
-                        <label></label>
-
-                        <label></label>
-
-                        <label></label>
-
-                        <label></label>
+                        <label>Loss Damege Payment :</label>
+                        <input type="file" name="LossDamegePayment">
 
                     </form>
                 </div>
@@ -349,6 +496,10 @@
                 </tbody>
             </table>
         </div>
+        <div id="divset1" class="set1"></div>
+        <div id="divset2" class="set1"></div>
+        <div id="divset3" class="set1"></div>
+        <div id="divset4" class="set1"></div>
     </section>
 </body>
 <script src="../../asserts/js/jquery-3.6.1.min.js"></script>
@@ -397,7 +548,7 @@
             url: baseURL+"car",
             success: function (res) {
                 for (let c of res.data) {
-                    let code = c.Type;
+                    let code = c.type;
                     $("#txtSelectCarType").append(`<option value="${code}">${code}</option>`);
                 }
             },
@@ -407,6 +558,53 @@
             }
         });
     }
+
+
+    $("#txtSelectCustID").change(function () {
+
+        let cusID = $("#txtSelectCustID").val();
+
+        $.ajax({
+            url: baseURL + "customer",
+            dataType: "json",
+            async: false,
+            success: function (resp) {
+                for (let cus of resp.data){
+                    if (cus.custID == cusID){
+                        console.log(cus)
+                        $("#txtName").text(cus.name);
+                        $("#txtAddress").text(cus.address);
+                        $("#txtTellNumber").text(cus.tellNum);
+                        $("#txtDateOfBrith").text(cus.dob);
+                        $("#txtEmail").text(cus.emailAddress);
+                    }
+                }
+            }
+        });
+    });
+
+    $('#txtSelectDriId').change(function (){
+        let driID = $('#txtSelectDriId').val();
+
+        $.ajax({
+            url: baseURL + "driver",
+            dataType: "json",
+            async: false,
+            success: function (resp) {
+                for (let dri of resp.data){
+                    if (dri.driID == driID){
+                        console.log(dri)
+                        $("#txtdriName").text(dri.driName);
+                        $("#txtdriAddress").text(dri.driAddress);
+                        $("#txtdriDLNum").text(dri.dlnumber);
+                        $("#txtdriEmail").text(dri.email);
+                        $("#txtdriAva").text(dri.availability);
+                    }
+                }
+            }
+        });
+
+    })
 
 </script>
 </html>

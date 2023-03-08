@@ -5,8 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -18,4 +17,17 @@ public class RentDetails {
     private String ReID;
     private String regNumber;
     private String SID;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "ReID")
+    private Rent rent;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "SID")
+    private Schedule schedule;
+
+    @ManyToOne
+    @JoinColumn(name = "regNumber")
+    private CarDetails carDetails;
+
 }

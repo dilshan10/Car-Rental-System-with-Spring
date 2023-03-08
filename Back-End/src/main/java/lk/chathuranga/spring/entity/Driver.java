@@ -7,6 +7,9 @@ import lombok.ToString;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import java.util.ArrayList;
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -23,4 +26,7 @@ public class Driver {
     private String imgPath;
     private String password;
     private String Availability;
+
+    @OneToMany(mappedBy = "drivers")
+    private List<Schedule> schedules = new ArrayList<>();
 }

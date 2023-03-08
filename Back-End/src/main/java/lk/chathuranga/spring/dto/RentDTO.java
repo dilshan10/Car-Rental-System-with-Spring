@@ -14,8 +14,10 @@ import java.math.BigDecimal;
 @ToString
 public class RentDTO {
     private String ReID;
+    private String custID;
     private String Date;
     private String Time;
     private String LossDamagePayment;
     private BigDecimal duration;
+    private String PayID;
 }
