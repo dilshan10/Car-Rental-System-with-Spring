@@ -5,15 +5,408 @@
     <title>Place Rent Form</title>
     <link rel="stylesheet" href="../../asserts/CSS/normalize.css">
     <style>
+        body>section:nth-child(1){
+            height: 100vh;
+            width: 100vw;
+            background: #0ced08;
+        }
+        body>section:nth-child(1)>div:nth-child(1){
+            height: 7vh;
+            width: 100vw;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            background: #399a2b;
+        }
+        body>section:nth-child(1)>div:nth-child(2){
+            height: 58vh;
+            width: 100vw;
+            position: absolute;
+            top: 7vh;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+        body>section:nth-child(1)>div:nth-child(3){
+            background: #8cf58a;
+            height: 30vh;
+            width: 100vw;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+        }
+        body>section:nth-child(1)>div:nth-child(2)>div:nth-child(1){
+            height: 20vh;
+            width: 50vw;
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin: auto;
+        }
+        body>section:nth-child(1)>div:nth-child(2)>div:nth-child(2){
+            height: 20vh;
+            width: 50vw;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            margin: auto;
+            border: 2px solid purple;
+        }
+        body>section:nth-child(1)>div:nth-child(2)>div:nth-child(3){
+            height: 100%;
+            width: 50%;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+            border: 2px solid purple;
+        }
 
+        body>section:nth-child(1)>div:nth-child(2)>div:nth-child(3)>div:nth-child(1){
+            height: 50%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            border: 1px solid red;
+        }
+
+        body>section:nth-child(1)>div:nth-child(2)>div:nth-child(3)>div:nth-child(2){
+            height: 50%;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            border: 1px solid red;
+        }
+
+        #lblPlaceRent{
+            height: fit-content;
+            width: fit-content;
+            position: absolute;
+            left: 2vw;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            font-size: 5vh;
+            color: white;
+        }
+
+        #tblPlcesOrder{
+            height: 100%;
+            width: 100%;
+        }
+
+        #lbltext1{
+            height: fit-content;
+            width: fit-content;
+            font-size: 3vh;
+            position: absolute;
+            top: 1vh;
+            left: 1vh;
+            margin: auto;
+        }
+
+        #lblCustID{
+            height: fit-content;
+            width: fit-content;
+            position: absolute;
+            top: 5vh;
+            left: 1vh;
+            margin: auto;
+        }
+
+        #txtSelectCustID{
+            height: fit-content;
+            width: 7vw;
+            position: absolute;
+            top: 5vh;
+            left: 12vh;
+            margin: auto;
+        }
+
+        #lblName{
+            height: fit-content;
+            width: fit-content;
+            position: absolute;
+            top: 5vh;
+            left: 29vh;
+            margin: auto;
+        }
+
+        #txtName{
+            height: fit-content;
+            width: fit-content;
+            position: absolute;
+            top: 5vh;
+            left: 43vh;
+            margin: auto;
+        }
+
+        #lblAddress{
+            height: fit-content;
+            width: fit-content;
+            position: absolute;
+            top: 9vh;
+            left: 1vh;
+            margin: auto;
+        }
+
+        #txtAddress{
+            height: fit-content;
+            width: fit-content;
+            position: absolute;
+            top: 9vh;
+            left: 18vh;
+            margin: auto;
+        }
+
+        #lblDateOfBrith{
+            height: fit-content;
+            width: fit-content;
+            position: absolute;
+            top: 13vh;
+            left: 1vh;
+            margin: auto;
+        }
+
+        #txtDateOfBrith{
+            height: fit-content;
+            width: fit-content;
+            position: absolute;
+            top: 13vh;
+            left: 14vh;
+            margin: auto;
+        }
+
+        #lblTellNumber{
+            height: fit-content;
+            width: fit-content;
+            position: absolute;
+            top: 13vh;
+            left: 35vh;
+            margin: auto;
+        }
+
+        #txtTellNumber{
+            height: fit-content;
+            width: fit-content;
+            position: absolute;
+            top: 13vh;
+            left: 47vh;
+            margin: auto;
+        }
+
+        #lblEmail{
+            height: fit-content;
+            width: fit-content;
+            position: absolute;
+            top: 13vh;
+            left: 64vh;
+            margin: auto;
+        }
+
+        #txtEmail{
+            height: fit-content;
+            width: fit-content;
+            position: absolute;
+            top: 13vh;
+            left: 78vh;
+            margin: auto;
+        }
 
     </style>
 </head>
 <body>
+    <section>
+        <div>
+            <label id="lblPlaceRent">Place Rent..</label>
+        </div>
+        <div>
+            <div>
+                <form>
 
+                    <label id="lbltext1">please select customer ID</label>
+
+                    <label id="lblCustID">Customer ID</label>
+                    <select id="txtSelectCustID"></select>
+
+                    <label id="lblName">Customer Name :</label>
+                    <label id="txtName"></label>
+
+                    <label id="lblAddress">Customer Address :</label>
+                    <label id="txtAddress"></label>
+
+                    <label id="lblDateOfBrith">Date Of brith :</label>
+                    <label id="txtDateOfBrith"></label>
+
+                    <label id="lblTellNumber">Tell-Number :</label>
+                    <label id="txtTellNumber"></label>
+
+                    <label id="lblEmail">Email-Address :</label>
+                    <label id="txtEmail"></label>
+
+                </form>
+            </div>
+            <div>
+                <form>
+
+                    <label>selete a Driver if you want..</label>
+
+                    <select id="txtSelectDriId"></select>
+
+                    <label></label>
+
+                    <label></label>
+
+                    <label></label>
+
+                    <label></label>
+
+                    <label></label>
+
+                    <label></label>
+
+                    <label></label>
+
+                    <label></label>
+
+                </form>
+            </div>
+            <div>
+                <div>
+                    <form>
+
+                        <label></label>
+
+                        <label></label>
+
+                        <label></label>
+
+                        <label></label>
+
+                        <label></label>
+
+                        <label></label>
+
+                        <label></label>
+
+                        <label></label>
+
+                    </form>
+                </div>
+                <div>
+                    <form>
+
+                        <label>Select Car Type</label>
+                        <select id="txtSelectCarType"></select>
+
+                        <label></label>
+
+                        <label></label>
+
+                        <label></label>
+
+                        <label></label>
+
+                        <label></label>
+
+                        <label></label>
+
+                        <label></label>
+
+                        <label></label>
+
+                        <label></label>
+
+                        <label></label>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div>
+            <table id="tblPlcesOrder">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="tblPlcesOrderBody">
+
+                </tbody>
+            </table>
+        </div>
+    </section>
 </body>
 <script src="../../asserts/js/jquery-3.6.1.min.js"></script>
 <script>
+
+    let baseURL = "http://localhost:8080/Back_End_war/";
+
+    loadCustomers();
+    loadDriver();
+    loadCar();
+
+    function loadCustomers(){
+        $.ajax({
+            url: baseURL+"customer",
+            success: function (res) {
+                for (let c of res.data) {
+                    let code = c.custID;
+                    $("#txtSelectCustID").append(`<option value="${code}">${code}</option>`);
+                }
+            },
+            error: function (error) {
+                let message = JSON.parse(error.responseText).message;
+                alert(message);
+            }
+        });
+    }
+
+    function loadDriver(){
+        $.ajax({
+            url: baseURL+"driver",
+            success: function (res) {
+                for (let c of res.data) {
+                    let code = c.driID;
+                    $("#txtSelectDriId").append(`<option value="${code}">${code}</option>`);
+                }
+            },
+            error: function (error) {
+                let message = JSON.parse(error.responseText).message;
+                alert(message);
+            }
+        });
+    }
+
+    function loadCar(){
+        $.ajax({
+            url: baseURL+"car",
+            success: function (res) {
+                for (let c of res.data) {
+                    let code = c.Type;
+                    $("#txtSelectCarType").append(`<option value="${code}">${code}</option>`);
+                }
+            },
+            error: function (error) {
+                let message = JSON.parse(error.responseText).message;
+                alert(message);
+            }
+        });
+    }
 
 </script>
 </html>
