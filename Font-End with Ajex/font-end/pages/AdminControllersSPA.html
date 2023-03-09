@@ -1384,6 +1384,61 @@
             border: 2px solid red;
         }
 
+        #lblRentCustID{
+            height: fit-content;
+            width: fit-content;
+            position: absolute;
+            left: 62vw;
+            top: 2vh;
+            margin: auto;
+            color: white;
+        }
+
+        #txtRentCustID{
+            height: 4vh;
+            width: 10vw;
+            position: absolute;
+            left: 62vw;
+            top: 4vh;
+            margin: auto;
+        }
+
+        #lblPayRentID{
+            height: fit-content;
+            width: fit-content;
+            position: absolute;
+            left: 58vw;
+            top: 2vh;
+            margin: auto;
+        }
+
+        #txtPayRentID{
+            height: 4vh;
+            width: 10vw;
+            position: absolute;
+            left: 58vw;
+            top: 4vh;
+            margin: auto;
+        }
+
+        #lblSchDriID{
+            height: fit-content;
+            width: fit-content;
+            position: absolute;
+            left: 35vw;
+            top: 2vh;
+            margin: auto;
+        }
+
+        #txtScheDriID{
+            height: 4vh;
+            width: 10vw;
+            position: absolute;
+            left: 35vw;
+            top: 4vh;
+            margin: auto;
+        }
+
         /*--------------------------------------------------------------------------------------------------------------*/
 
     </style>
@@ -1591,6 +1646,11 @@
                     <label for="txtRentDuration" id="lblRentDuration">Duration</label>
                     <input type="text" name="duration" id="txtRentDuration">
 
+                    <label for="txtRentCustID" id="lblRentCustID">Customer ID</label>
+                    <select name="custID" id="txtRentCustID">
+                        <option></option>
+                    </select>
+
                 </form>
                 <div id="imgViwer3"></div>
             </div>
@@ -1608,6 +1668,7 @@
                         <th>Time</th>
                         <th>LostDamegePayment</th>
                         <th>duration</th>
+                        <th>Customer ID</th>
                     </tr>
                     </thead>
                     <tbody id="tblRent" style="background: #8cf58a; color: black"></tbody>
@@ -1721,6 +1782,9 @@
                     <label for="txtPayTime" id="lblPayTime">Payment Time</label>
                     <input type="time" name="time" id="txtPayTime">
 
+                    <label for="txtPayRentID" id="lblPayRentID">Rent ID</label>
+                    <select name="ReID" id="txtPayRentID"></select>
+
                 </form>
             </div>
             <div>
@@ -1736,6 +1800,7 @@
                         <th>Date</th>
                         <th>Time</th>
                         <th>Value</th>
+                        <th>Rent ID</th>
                     </tr>
                     </thead>
                     <tbody id="tblPayment" style="background: #8cf58a; color: black"></tbody>
@@ -1755,6 +1820,9 @@
                     <label for="txtTime" id="lblTime">Time</label>
                     <input type="time" name="Time" id="txtTime">
 
+                    <label for="txtScheDriID" id="lblSchDriID">Driver ID</label>
+                    <select name="driID" id="txtScheDriID"></select>
+
                 </form>
             </div>
             <div>
@@ -1769,6 +1837,7 @@
                         <th>Schedule ID</th>
                         <th>Date</th>
                         <th>Time</th>
+                        <th>Driver ID</th>
                     </tr>
                     </thead>
                     <tbody id="tblSchedule" style="background: #8cf58a; color: black"></tbody>
@@ -2020,6 +2089,7 @@
                 for (let cus of resp.data){
                     var row = '<tr><td>'+cus.custID+'</td><td>'+cus.name+'</td><td>'+cus.address+'</td><td>'+cus.tellNum+'</td><td>'+cus.dob+'</td><td>'+cus.emailAddress+'</td><td>'+cus.password+'</td><td>'+cus.imgPath+'</td></tr>';
                     $('#tblCustomer').append(row);
+                    $("#txtRentCustID").append(`<option value="${cus.custID}">${cus.custID}</option>`);
                     bindRowClickEvents();
                 }
             }
@@ -2201,13 +2271,15 @@
         let time = $('#txtRentTime').val();
         let lossdamegePay = $('#txtRentLoss').val();
         let duration = $('#txtRentDuration').val();
+        let cust = $('#txtRentCustID').val();
 
         var rent = {
             ReID : reid,
             Date : date,
             Time :time,
             LossDamegePayment : lossdamegePay,
-            duration :duration
+            duration :duration,
+            custID: cust
         }
 
         $.ajax({
@@ -2256,17 +2328,19 @@
             let time = $(this).children(":eq(2)").text();
             let lossDpay = $(this).children(":eq(3)").text();
             let duration = $(this).children(":eq(4)").text();
+            let custID = $(this).children(":eq(5)").text();
 
-            setTextFildValue2( reid,date,time,lossDpay,duration);
+            setTextFildValue2( reid,date,time,lossDpay,duration,custID);
 
         })
     }
 
-    function setTextFildValue2(reid,date,time,lossDpay,duration){
+    function setTextFildValue2(reid,date,time,lossDpay,duration,custID){
         $('#txtRentID').val(reid);
         $('#txtRentDate').val(date);
         $('#txtRentTime').val(time);
         $('#txtRentDuration').val(duration);
+        $('#txtRentCustID').val(custID)
         $('#imgViwer3').css("background","url(../../asserts/image/"+lossDpay+")");
         $('#imgViwer3').css("background-size","cover");
     }
@@ -2282,9 +2356,10 @@
                 $('#RentCount').text(resp.data.length)
                 console.log(resp)
                 for (let ren of resp.data) {
-                    var row = '<tr><td>'+ren.reID+'</td><td>'+ren.date+'</td><td>'+ren.time+'</td><td>'+ren.lossDamagePayment+'</td><td>'+ren.duration+'</td></tr>';
+                    var row = '<tr><td>'+ren.reID+'</td><td>'+ren.date+'</td><td>'+ren.time+'</td><td>'+ren.lossDamagePayment+'</td><td>'+ren.duration+'</td><td>'+ren.custID+'</td></tr>';
                     $('#tblRent').append(row);
                     $('#txtDeRentID').append(`<option value="${ren.reID}">${ren.reID}</option>`)
+                    $('#txtPayRentID').append(`<option value="${ren.reID}">${ren.reID}</option>`)
                     bindRowClickEvents2()
                 }
             }
@@ -2522,6 +2597,7 @@
                 for (let dri of resp.data){
                     var row = '<tr><td>'+dri.driID+'</td><td>'+dri.driName+'</td><td>'+dri.driAddress+'</td><td>'+dri.dlnumber+'</td><td>'+dri.email+'</td><td>'+dri.imgPath+'</td><td>'+dri.password+'</td><td>'+dri.availability+'</td></tr>'
                     $('#tblDriver').append(row);
+                    $('#txtScheDriID').append(`<option value="${dri.driID}">${dri.driID}</option>`)
                     bindRowClickEvents4()
                 }
             }
@@ -2556,12 +2632,14 @@
         let value = $('#txtValue').val();
         let date = $('#txtPayDate').val();
         let time = $('#txtPayTime').val();
+        let reID = $('#txtPayRentID').val();
 
         var payment = {
             PayID : payid,
             Value : value,
             date : date,
-            time :time
+            time :time,
+            reID :reID
         }
 
         $.ajax({
@@ -2607,17 +2685,19 @@
             let value = $(this).children(":eq(3)").text();
             let date = $(this).children(":eq(1)").text();
             let time = $(this).children(":eq(2)").text();
+            let reID = $(this).children(":eq(3)").text();
 
-            setTextFildValue5(id,value,date,time);
+            setTextFildValue5(id,value,date,time,reID);
 
         })
     }
 
-    function setTextFildValue5(id,value,date,time){
+    function setTextFildValue5(id,value,date,time,reID){
         $('#txtPayID').val(id)
         $('#txtValue').val(value)
         $('#txtPayDate').val(date)
         $('#txtPayTime').val(time)
+        $('#txtPayRentID').val(reID)
     }
 
     loadAllPayment();
@@ -2630,7 +2710,7 @@
             success:function (resp){
                 console.log(resp)
                 for (let pay of resp.data){
-                    var row = '<tr><td>'+pay.payID+'</td><td>'+pay.date+'</td><td>'+pay.time+'</td><td>'+pay.value+'</td></tr>';
+                    var row = '<tr><td>'+pay.payID+'</td><td>'+pay.date+'</td><td>'+pay.time+'</td><td>'+pay.value+'</td><td>'+pay.reID+'</td></tr>';
                     $('#tblPayment').append(row);
                     bindRowClickEvents5()
                 }
@@ -2662,14 +2742,16 @@
 
     $('#btnUpdateSchedule').click(function () {
 
-        let sid = $('').val();
-        let date = $('').val();
-        let time = $('').val();
+        let sid = $('#txtScID').val();
+        let date = $('#txtDate').val();
+        let time = $('#txtTime').val();
+        let driID = $('#txtScheDriID').val();
 
         var schedule = {
             SID: sid,
             Date: date,
-            Time: time
+            Time: time,
+            driID : driID
         }
 
         $.ajax({
@@ -2715,16 +2797,18 @@
             let sid = $(this).children(":eq(0)").text();
             let date = $(this).children(":eq(1)").text();
             let time = $(this).children(":eq(2)").text();
+            let driID = $(this).children(":eq(3)").text();
 
-            setTextFildValue6(sid,date,time);
+            setTextFildValue6(sid,date,time,driID);
 
         })
     }
 
-    function setTextFildValue6(sid,date,time){
+    function setTextFildValue6(sid,date,time,driID){
         $('#txtScID').val(sid)
         $('#txtDate').val(date)
         $('#txtTime').val(time)
+        $('#txtScheDriID').val(driID)
     }
 
     loadAllSchedule();
@@ -2737,7 +2821,7 @@
             success:function (resp){
                 console.log(resp)
                 for (let sche of resp.data){
-                    var row = '<tr><td>'+sche.sid+'</td><td>'+sche.date+'</td><td>'+sche.time+'</td></tr>'
+                    var row = '<tr><td>'+sche.sid+'</td><td>'+sche.date+'</td><td>'+sche.time+'</td><td>'+sche.driID+'</td></tr>'
                     $('#tblSchedule').append(row)
                     $('#txtDeScheID').append(`<option value="${sche.sid}">${sche.sid}</option>`)
                     bindRowClickEvents6()

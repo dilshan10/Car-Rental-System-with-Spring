@@ -19,5 +19,4 @@ public class RentDTO {
     private String Time;
     private String LossDamagePayment;
     private BigDecimal duration;
-    private String PayID;
 }

@@ -6,8 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -20,4 +19,10 @@ public class Payment {
     private Double Value;
     private String date;
     private String time;
+    private String ReID;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "ReID",insertable = false,updatable = false)
+    private Rent rent;
+
 }

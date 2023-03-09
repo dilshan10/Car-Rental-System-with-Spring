@@ -54,7 +54,6 @@
             left: 0;
             bottom: 0;
             margin: auto;
-            border: 2px solid purple;
         }
         body>section:nth-child(1)>div:nth-child(2)>div:nth-child(3){
             height: 100%;
@@ -74,7 +73,6 @@
             left: 0;
             right: 0;
             margin: auto;
-            border: 1px solid red;
         }
 
         body>section:nth-child(1)>div:nth-child(2)>div:nth-child(3)>div:nth-child(2){
@@ -85,7 +83,6 @@
             left: 0;
             right: 0;
             margin: auto;
-            border: 1px solid red;
         }
 
         #lblPlaceRent{
@@ -372,12 +369,143 @@
             right: 0;
         }
 
+        #lblRent{
+            height: fit-content;
+            width: fit-content;
+            position: absolute;
+            top: 6vh;
+            left: 2vh;
+            margin: auto;
+        }
+
+        #txtRent{
+            height: fit-content;
+            width: 8vw;
+            position: absolute;
+            top: 6vh;
+            left: 10vh;
+            margin: auto;
+        }
+
+        #lblRDate{
+            height: fit-content;
+            width: fit-content;
+            position: absolute;
+            top: 6vh;
+            left: 30vh;
+            margin: auto;
+        }
+
+        #txtRDate{
+            height: fit-content;
+            width: 9vw;
+            position: absolute;
+            top: 6vh;
+            left: 36vh;
+            margin: auto;
+        }
+
+        #lblRTime{
+            height: fit-content;
+            width: fit-content;
+            position: absolute;
+            top: 6vh;
+            left: 57vh;
+            margin: auto;
+        }
+
+        #txtRTime{
+            height: fit-content;
+            width: fit-content;
+            position: absolute;
+            top: 6vh;
+            left: 63vh;
+            margin: auto;
+        }
+
+        #lblRDuration{
+            height: fit-content;
+            width: fit-content;
+            position: absolute;
+            top: 6vh;
+            left: 80vh;
+            margin: auto;
+        }
+
+        #txtRDuration{
+            height: fit-content;
+            width: 5vw;
+            position: absolute;
+            top: 6vh;
+            left: 89vh;
+            margin: auto;
+        }
+
+        #lblRLossDamege{
+            height: fit-content;
+            width: fit-content;
+            position: absolute;
+            top: 10vh;
+            left: 2vh;
+            margin: auto;
+        }
+
+        #txtRLossDamege{
+            height: fit-content;
+            width: fit-content;
+            position: absolute;
+            top: 10vh;
+            left: 22vh;
+            margin: auto;
+        }
+
+        #lblCarType{}
+
+        #txtSelectCarType{}
+
+        #lblRegNumber{}
+
+        #txtRegNumber{}
+
+        #lblBrand{}
+
+        #txtBrand{}
+
+        #lblFreeMil{}
+
+        #txtFreeMil{}
+
+        #lblPrice{}
+
+        #txtPrice{}
+
+        #lblColor{}
+
+        #txtColor{}
+
+        #lblNumbOf{}
+
+        #txtNumbOf{}
+
+        #lblTrans{}
+
+        #txtTrans{}
+
+        #lblFuel{}
+
+        #txtFuel{}
+
+        #lblStatus{}
+
+        #txtStatus{}
+
     </style>
 </head>
 <body>
     <section>
         <div>
             <label id="lblPlaceRent">Place Rent..</label>
+            <label></label>
         </div>
         <div>
             <div>
@@ -386,7 +514,9 @@
                     <label id="lbltext1">please select your customer ID</label>
 
                     <label id="lblCustID">Customer ID</label>
-                    <select id="txtSelectCustID"></select>
+                    <select id="txtSelectCustID">
+                        <option></option>
+                    </select>
 
                     <label id="lblName">Customer Name :</label>
                     <label id="txtName"></label>
@@ -411,7 +541,9 @@
                     <label>selete a Driver if you want..</label>
 
                     <label id="lblDriID">Driver ID :</label>
-                    <select id="txtSelectDriId"></select>
+                    <select id="txtSelectDriId">
+                        <option></option>
+                    </select>
 
                     <label id="lbldriName">Driver Name :</label>
                     <label id="txtdriName"></label>
@@ -434,48 +566,57 @@
                 <div>
                     <form>
 
-                        <label>Rent ID :</label>
-                        <input type="text" name="reID">
+                        <label id="lblRent">Rent ID :</label>
+                        <input type="text" name="reID" id="txtRent">
 
-                        <label>Date :</label>
-                        <input type="date" name="date">
+                        <label id="lblRDate">Date :</label>
+                        <input type="date" name="date" id="txtRDate">
 
-                        <label>Time :</label>
-                        <input type="time" name="time">
+                        <label id="lblRTime">Time :</label>
+                        <input type="time" name="time" id="txtRTime">
 
-                        <label>Duration :</label>
-                        <input type="number" name="duration">
+                        <label id="lblRDuration">Duration :</label>
+                        <input type="number" name="duration" id="txtRDuration">
 
-                        <label>Loss Damege Payment :</label>
-                        <input type="file" name="LossDamegePayment">
+                        <label id="lblRLossDamege">Loss Damege Payment :</label>
+                        <input type="file" name="LossDamegePayment" id="txtRLossDamege">
 
                     </form>
                 </div>
                 <div>
                     <form>
 
-                        <label>Select Car Type</label>
-                        <select id="txtSelectCarType"></select>
+                        <label id="lblCarType">Select Car Type :</label>
+                        <select id="txtSelectCarType">
+                            <option></option>
+                        </select>
 
-                        <label></label>
+                        <label for="txtRegNumber" id="lblRegNumber">Register Number :</label>
+                        <label id="txtRegNumber"></label>
 
-                        <label></label>
+                        <label for="txtBrand" id="lblBrand">Brand :</label>
+                        <label id="txtBrand"></label>
 
-                        <label></label>
+                        <label for="txtFreeMil" id="lblFreeMil">Free Mileage :</label>
+                        <label id="txtFreeMil"></label>
 
-                        <label></label>
+                        <label for="txtPrice" id="lblPrice">Price For Extra KM :</label>
+                        <label id="txtPrice"></label>
 
-                        <label></label>
+                        <label for="txtColor" id="lblColor">Color :</label>
+                        <label id="txtColor"></label>
 
-                        <label></label>
+                        <label for="txtNumbOf" id="lblNumbOf">Number Of Passenger :</label>
+                        <label id="txtNumbOf"></label>
 
-                        <label></label>
+                        <label for="txtTrans" id="lblTrans">Transmission type :</label>
+                        <label id="txtTrans"></label>
 
-                        <label></label>
+                        <label for="txtFuel" id="lblFuel">Fuel Type :</label>
+                        <label id="txtFuel"></label>
 
-                        <label></label>
-
-                        <label></label>
+                        <label for="txtStatus" id="lblStatus">Status :</label>
+                        <label id="txtStatus"></label>
 
                     </form>
                 </div>

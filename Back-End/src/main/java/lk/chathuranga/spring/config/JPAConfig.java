@@ -33,7 +33,7 @@ public class JPAConfig {
     @Bean
     public DataSource dataSource(){
         DriverManagerDataSource ds = new DriverManagerDataSource();
-        ds.setDriverClassName("com.mysql.jdbc.Driver");
+        ds.setDriverClassName("com.mysql.cj.jdbc.Driver");
         ds.setUrl("jdbc:mysql://localhost:3306/AAD_CourceWork?createDatabaseIfNotExist=true");
         ds.setUsername("root");
         ds.setPassword("1234");

@@ -15,4 +15,5 @@ public class PaymentDTO {
     private Double Value;
     private String date;
     private String time;
+    private String ReID;
 }

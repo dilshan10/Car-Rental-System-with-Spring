@@ -9,7 +9,7 @@ import lombok.ToString;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -23,7 +23,8 @@ public class Schedule {
     private String Date;
     private String Time;
 
-    @ManyToOne
-    @JoinColumn(name = "driID")
+    @OneToOne
+    @JoinColumn(name = "driID",insertable = false,updatable = false)
     private Driver driver;
+
 }

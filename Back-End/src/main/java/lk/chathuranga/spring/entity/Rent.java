@@ -21,13 +21,11 @@ public class Rent {
     private String Time;
     private String LossDamegePayment;
     private BigDecimal duration;
-    private String PayID;
-
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "PayID")
-    private Payment payment;
 
     @ManyToOne
-    @JoinColumn(name = "custID")
+    @JoinColumn(name = "custID",insertable = false,updatable = false)
     private Customer customer;
+
+
+
 }

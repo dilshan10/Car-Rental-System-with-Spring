@@ -19,15 +19,15 @@ public class RentDetails {
     private String SID;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "ReID")
+    @JoinColumn(name = "ReID",insertable = false,updatable = false)
     private Rent rent;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "SID")
+    @JoinColumn(name = "SID",insertable = false,updatable = false)
     private Schedule schedule;
 
     @ManyToOne
-    @JoinColumn(name = "regNumber")
+    @JoinColumn(name = "regNumber",insertable = false,updatable = false)
     private CarDetails carDetails;
 
 }
